@@ -1,2 +1,65 @@
 /* HOMEPAGE SECTION FOR PHOTOGRAPHERS */
+.articlePartPhotographers {
+    margin: 6px;
+    padding: 3.5px;
+    text-align: center;
+    width: 264px;
+}
+.articlePartPhotographers a {
+    text-decoration: none;
+}
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-right: 3.5px;
+    margin-left: 6px;
+}
+.location {
+    color: #901C1C;
+    margin: 2.5px;
+}
+.name {
+    color: #D3573C;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.price {
+    color: #757575;
+    margin: 0;
+}
+.tagline {
+    margin: 0;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+    margin-top: 84px;
+    padding: 0;
+    width: 100%;
+}
+section img {
+    background-color: #59CE26;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 0 0 10px rgba(134, 134, 134, 0.432);
+    height: 150px;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+    width: 150px;
+}
+section img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
 
+/* CSS QUERIES */
