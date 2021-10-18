@@ -1,2 +1,29 @@
 /* 'PASSER AU CONTENU' BUTTON */
-
+main>a {
+    background: #DB8876;
+    border-radius: 3.5px;
+    -webkit-border-radius: 3.5px;
+    -moz-border-radius: 3.5px;
+    -ms-border-radius: 3.5px;
+    -o-border-radius: 3.5px;
+    color: #000;
+    display: none;
+    flex-wrap: nowrap;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px; /* checking at end */
+    font-weight: 700;
+    left: 0;
+    margin: 0 auto;
+    padding: 5px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 2%;
+    width: 180px;
+    z-index: 1;
+}
+main>a:hover {
+    background: #901C1C;
+    color: #fff;
+}
