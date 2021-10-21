@@ -1,6 +1,7 @@
 // IMPORT OTHERS FUTURE ELEMENTS (FILTERS & SCROLL BUTTON)
 
-import scrollButton from "./scrollButton";
+import filter from "./filters.js";
+import scrollButton from "./scrollButton.js";
 
 // DISPLAY PHOTOGRAPHERS
 export default class homepageBuilder {
@@ -13,20 +14,23 @@ export default class homepageBuilder {
             let articlePartPhotographers = document.createElement('article');
             articlePartPhotographers.className = photograph.tags.join(' ') + ' articlePhoto';
 
-            let templateModelPhotographer = `
-            <a href='photographer-page.html?id={photograph.id}' title='{photograph.name}'>
-                <img src='{photograph.portrait}' alt='{photograph.alt}'>
-                <h2 class='name>{photograph.name}</h2>
-            </a>
-            <p class='location'>{photograph.city}, {photograph.country}</p>
-            <p class='tagline'>{photograph.tagline}</p>
-            <p class='price'>{photograph.price}€/jour</p>
-            <ul class='filters'>{photograph.tags.map(function (tag) => '<li data-filter='{tag}'>' + '#{tag}' + '</li>').join(' ')}</ul>
-            `
+            let templateModelPhotographer = () => {
+                console.log("génial")
+                return ( `
+                <a href='photographer-page.html?id={photograph.id}' title='{photograph.name}'>
+                    <img src='{photograph.portrait}' alt='{photograph.alt}'>
+                    <h2 class='name>{photograph.name}</h2>
+                </a>
+                <p class='location'>{photograph.city}, {photograph.country}</p>
+                <p class='tagline'>{photograph.tagline}</p>
+                <p class='price'>{photograph.price}€/jour</p>
+                <ul class='filters'>{photograph.tags.map(function (tag) => '<li data-filter='{tag}'>' + '#{tag}' + '</li>').join(' ')}</ul> `
+            )};
+            
             sectionPartPhotographers.appendChild(articlePartPhotographers);
             articlePartPhotographers.innerHTML = templateModelPhotographer;
         })
         new scrollButton().scrollBtn();
-        // add function for filters
+        new filter().filterActived();
     }
 }
