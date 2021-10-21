@@ -17,14 +17,14 @@ export default class homepageBuilder {
             let templateModelPhotographer = () => {
                 console.log("génial")
                 return ( `
-                <a href='photographer-page.html?id={photograph.id}' title='{photograph.name}'>
-                    <img src='{photograph.portrait}' alt='{photograph.alt}'>
-                    <h2 class='name>{photograph.name}</h2>
+                <a href='photographer-page.html?id={photographers.id}' title='{photographers.name}'>
+                    <img src='{photographers.portrait}' alt='{photographers.alt}'>
+                    <h2 class='name>{photographers.name}</h2>
                 </a>
-                <p class='location'>{photograph.city}, {photograph.country}</p>
-                <p class='tagline'>{photograph.tagline}</p>
-                <p class='price'>{photograph.price}€/jour</p>
-                <ul class='filters'>{photograph.tags.map(function (tag) => '<li data-filter='{tag}'>' + '#{tag}' + '</li>').join(' ')}</ul> `
+                <p class='location'>{photographers.city}, {photographers.country}</p>
+                <p class='tagline'>{photographers.tagline}</p>
+                <p class='price'>{photographers.price}€/jour</p>
+                <ul class='filters'>{photographers.tags.map(function (tag) => '<li data-filter='{tag}'>' + '#{tag}' + '</li>').join(' ')}</ul> `
             )};
             
             sectionPartPhotographers.appendChild(articlePartPhotographers);
