@@ -1,16 +1,2 @@
 // EXTRACT DATA FROM FISHEYEDATA.JSON - TWO CATEGORIES: PHOTOGRAPHERS & MEDIAS
-export default class fishEyeApi {
-    async extractDataFishEyeApi() {
-        let pathway = './FishEyeApi/FishEyeData.json';
-        let res = await fetch(pathway);
-        let json = await res.json();
-
-        const dataPhotographers = [...json.photographers];
-        const dataMedias = [...json.media];
-
-        return {
-            'photographers': dataPhotographers,
-            'media': dataMedias
-        };
-    };
-};
+const grabDatas = () => fetch('./FishEyeApi/FishEyeData.json').then(response => response.json()).catch(err => console.log("An error occurs when we try to fetch photographers' datas from json", err));
