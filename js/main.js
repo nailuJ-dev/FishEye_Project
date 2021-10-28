@@ -6,15 +6,20 @@ import PageBuilder from './builders/pageBuilder.js';
 
 // IMPORT PHOTOGRAPHERS' PAGES ELEMENTS
 import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
+import DropMenu from './photographer-page/dropmenu.js';
 
 
 // DISPATCH DATAS
-(function initApiDispatch () {
-    new FishEyeApi().grabDatasApi().then((datas) => {
+(() => {
+    const api = new FishEyeApi();
+    api.grabDatasApi().then((datas) => {
         if (window.location.pathname.includes('./photographers.html')) {
-            new ProfilePhotographers().showProfilePhotographers(datas);
-            new DropMenu().dropDownMenu(datas);
-            new BuilderMediaPhoto().photoMedia(datas);
+            const profile = new ProfilePhotographers()
+            const downMenu = new DropMenu()
+            const buildMedias = new BuilderMediaPhoto()
+            profile.showProfilePhotographers(datas);
+            downMenu.dropDownMenu(datas);
+            buildMedias.photoMedia(datas);
         }
         new PageBuilder().showPhotographers(datas);
     }).catch(() => {
