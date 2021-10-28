@@ -1,6 +1,6 @@
 // GET DATA & CREATE PHOTOGRAPHERS CARDS WITH THEM
 class PhotographerCard {
-    constructor(datas, choices) {
+    constructor (datas, choices) {
         this._id = datas.id
         this._city = datas.city
         this._country = datas.country
@@ -74,4 +74,4 @@ class PhotographerCard {
         });
         return likesCounter
     };
-} 
+};

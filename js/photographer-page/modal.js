@@ -30,7 +30,7 @@ export default class Modal {
     // Add photographer names in form
     formPhotographerName(json) {
         let id = window.location.search.split('id=')[1];
-        let photographers = !id ? json : json.filter(photographer => photographer.id == id);
+        let photographers = !id ? json : json.filter(photographer => photographer.id === id);
         let photographerName = document.getElementById('photographer-name-for-form');
         let photographerNameTemplate = '{photographers[0].name}';
         photographerName.innerHTML = photographerNameTemplate;
