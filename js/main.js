@@ -5,14 +5,13 @@ import FishEyeApi from './fisheyeapi.js';
 import PageBuilder from './builders/pageBuilder.js';
 
 // IMPORT PHOTOGRAPHERS' PAGES ELEMENTS
-import ProfilePhotographers from 
-import DropMenu from
-import BuilderMediaPhoto from 
+import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
+
 
 // DISPATCH DATAS
 (function initApiDispatch () {
     new FishEyeApi().grabDatasApi().then((datas) => {
-        if (window.location.pathname.includes('./photographer-page.html')) {
+        if (window.location.pathname.includes('./photographers.html')) {
             new ProfilePhotographers().showProfilePhotographers(datas);
             new DropMenu().dropDownMenu(datas);
             new BuilderMediaPhoto().photoMedia(datas);

@@ -21,6 +21,6 @@ export default class ProfilePhotographers {
         `
         photographerProfilePart.innerHTML = modelPhotographerProfileCard;
         new Modal().modal(photographerDatas);
-        new ContactForm().formFields(); // add this name in form.js
+        new ContactForm().formFields();
     };
 };
