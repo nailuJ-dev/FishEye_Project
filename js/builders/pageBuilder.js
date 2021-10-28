@@ -22,7 +22,7 @@ export default class PageBuilder {
             `
             photographersPart.appendChild(photographersArticle);
             photographersArticle.innerHTML = modelPhotographerCard;
-        })
+        });
         new Filter().filterActived();
         new ScrollButton().scrollBtn();
     };
