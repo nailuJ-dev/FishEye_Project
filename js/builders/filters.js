@@ -1,5 +1,5 @@
 // Function for filter's tags
-export default class filter {
+export default class Filter {
     // Get filters activated
     filterActived() {
         let getFilters = document.querySelector('ul');

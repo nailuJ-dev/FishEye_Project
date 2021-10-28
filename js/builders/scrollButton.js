@@ -1,4 +1,4 @@
-export default class scrollButton {
+export default class ScrollButton {
     // Get position on screen to bring the user back to the top of the website page
     scrollBtn() {
         window.addEventListener('scroll', () => {
