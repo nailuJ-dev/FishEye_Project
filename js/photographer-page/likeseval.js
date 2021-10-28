@@ -6,7 +6,7 @@ export default class AddRemoveLikes {
             let classTargeted = typeof el.target.classList === 'undefined' ? [] : el.target.classList.value.split(' ');
             let classButton = classTargeted.indexOf('heart-button') !== -1 // add 'heart-button' for 'fa-heart' in gallery files
             if (classButton) {
-                let likesTotal = parseInt(document.getElementById('likes-total-count').innerHTML); // add likes-total-count
+                let likesTotal = parseInt(document.getElementById('likes-total-count').innerHTML); // add likes-total-count in showMediaBuilder with creating likes box template
                 let likesCount = el.target.parentNode.firstElementChild.firstElementChild; // check if it's the right path, estimated in my spirit so not sure
                 let likesValues = parseInt(likesCount.innerHTML);
                 let liked = classTargeted.indexOf('liked') !== -1;
