@@ -33,7 +33,7 @@ export default class ContactForm {
         // function to check age
         function checkMessage (input) {
         if (input.trim() !== '' || input.trim() != null) {
-                return true
+            return true
         }
         input.parentElement.setAttribute('data-error-visible', 'true')
         input.style.border = '2px solid #E54858'
