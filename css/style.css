@@ -38,3 +38,7 @@ ul li {
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
 }
+
+ul li a {
+    text-decoration: none;
+}

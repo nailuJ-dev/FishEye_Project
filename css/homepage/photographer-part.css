@@ -1,33 +1,33 @@
 /* HOMEPAGE SECTION FOR PHOTOGRAPHERS */
-.articlePartPhotographers {
+.photographerArticle {
     margin: 6px;
     padding: 3.5px;
     text-align: center;
     width: 264px;
 }
-.articlePartPhotographers a {
+.photographerArticle a {
     text-decoration: none;
 }
-.filters {
+.filter {
     display: flex;
     justify-content: center;
     margin-right: 3.5px;
     margin-left: 6px;
 }
-.location {
+.filter-location {
     color: #901C1C;
     margin: 2.5px;
 }
-.name {
+.filter-name {
     color: #D3573C;
     font-size: 20px;
     margin-bottom: 8px;
 }
-.price {
+.filter-price {
     color: #757575;
     margin: 0;
 }
-.tagline {
+.filter-tagline {
     margin: 0;
 }
 section {
@@ -47,11 +47,11 @@ section img {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     box-shadow: 0 0 10px rgba(134, 134, 134, 0.432);
-    height: 150px;
+    height: 160px;
     margin: 0 auto;
     object-fit: cover;
     overflow: hidden;
-    width: 150px;
+    width: 160px;
 }
 section img:hover {
     cursor: pointer;

@@ -2,7 +2,7 @@
 h1 {
     color: #901C1C;
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     width: fit-content;
 }
 
@@ -16,7 +16,7 @@ header {
 }
 
 header img {
-    width: 96px;
+    width: 105px;
 }
 
 header nav ul {
@@ -32,6 +32,7 @@ header nav ul {
     right: 0;
     text-align: center;
     top: 90px;
+    text-decoration: none;
 }
 
 /* CSS QUERIES */
