@@ -9,7 +9,7 @@
     console.log('merde')
     getFilters.addEventListener('click', event => {
         console.log('yes')
-        let getValueData = getFilters.value
+        let getValueData = getFilters.getAttribute('data-filter')
         arrayFilters.push(getValueData);
         console.log(arrayFilters)
         if (getValueData in arrayFilters) {
