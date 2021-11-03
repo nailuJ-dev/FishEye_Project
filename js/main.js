@@ -8,6 +8,10 @@ import PageBuilder from './builders/pageBuilder.js';
 import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
 import DropMenu from './photographer-page/dropmenu.js';
 
+function onTagFilter (tag, list) {
+    return list.filter((item) => item.tags.includes(tag));
+};
+let articlePart = document.querySelectorAll('.photographerArticle').innerHTML;
 
 // DISPATCH DATAS
 (() => {

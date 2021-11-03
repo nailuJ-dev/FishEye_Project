@@ -1,9 +1,37 @@
 // Function for filter's tags
-export default class Filter {
+/* export default class Filter {
     // Get filters activated
-    filterActived() {
-        let getFilters = document.querySelector('ul');
-        let articlePart = document.querySelectorAll('.photographerArticle');
+    function filterActived () {
+    let articlePart = document.querySelectorAll('.photographerArticle');
+    let listTags = document.querySelector('ul')
+    let getFilters = listTags.querySelectorAll('li');
+    let arrayFilters = [];
+    console.log('merde')
+    getFilters.addEventListener('click', event => {
+        console.log('yes')
+        let getValueData = getFilters.value
+        arrayFilters.push(getValueData);
+        console.log(arrayFilters)
+        if (getValueData in arrayFilters) {
+            let removeItem = arrayFilters.filter((e) => e !== getValueData);
+            arrayFilters = removeItem;
+        } else {
+            return arrayFilters;
+        };
+        articlePart.innerHTML = arrayFilters;
+    });
+};
+
+function filterActived () {
+    let articlePart = document.querySelectorAll('.photographerArticle');
+    let listTags = document.querySelector('ul')
+    let getFilters = listTags.querySelectorAll('li');
+    console.log('merde')
+    getFilters.addEventListener('click', onTagFilter = (tag, list) => {
+        return list.filter((item) => item.tags.includes(tag));
+    }
+    articlePart.innerHTML = list;
+)};
 
         // Events on click li elements
         getFilters.addEventListener('click', event => {
@@ -50,4 +78,21 @@ export default class Filter {
             }
         });
     };
+};
+*/
+function filterActived() {
+    let getFilters = document.querySelector('ul li');
+    let articlePart = document.querySelectorAll('.photographerArticle');
+    let arrayFilters = [];
+    getFilters.addEventListener('click', event => {
+        let getValueData = getFilters.getAttribute('data-filter')
+        arrayFilters.push(getValueData);
+        if (getValueData in arrayFilters) {
+            let removeItem = arrayFilters.filter((e) => e !== getValueData);
+            arrayFilters = removeItem;
+        } else {
+            return arrayFilters;
+        };
+        articlePart.innerHTML = arrayFilters;
+    });
 };
