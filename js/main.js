@@ -8,11 +8,6 @@ import PageBuilder from './builders/pageBuilder.js';
 import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
 import DropMenu from './photographer-page/dropmenu.js';
 
-function onTagFilter (tag, list) {
-    return list.filter((item) => item.tags.includes(tag));
-};
-let articlePart = document.querySelectorAll('.photographerArticle').innerHTML;
-
 // DISPATCH DATAS
 (() => {
     const api = new FishEyeApi();
@@ -30,3 +25,27 @@ let articlePart = document.querySelectorAll('.photographerArticle').innerHTML;
         console.error('Failure in loading FishEyeApi datas');
     });
 })();
+
+const filterByTag = async (tag, photographers) => {
+    if (tag in photographers.tags) {
+        return photographers.filter((photographer) => photographer.tags.includes(tag));
+    } else {
+        return photographers;
+    };
+};
+
+const init = async () => {
+    const profile = new PageBuilder().showPhotographers(datas);
+    const listTags = document.querySelector('ul');
+    const getFilters = listTags.querySelectorAll('li');
+    const { photographers } = await profile();
+    getFilters.forEach((tag) => {
+        tag.addEventListener('click', function () {
+            const sortedPhotogoraphers = filterByTag(tag.textContent.replace(/(\s|\#)+/g, '').toLowerCase(), photographers);
+            showDatas(sortedPhotogoraphers)
+        });
+    });
+    showDatas(photographers);
+};
+
+init();
