@@ -7,17 +7,6 @@ import ScrollButton from './scrollButton.js';
 };
 let articlePart = document.querySelectorAll('.photographerArticle').innerHTML; */
 
-function filterActived () {
-    let articlePart = document.querySelectorAll('.photographerArticle');
-    let listTags = document.querySelector('ul')
-    let getFilters = listTags.querySelectorAll('li');
-    console.log('merde')
-    getFilters.addEventListener('click', onTagFilter (tag, list) => {
-        return list.filter((item) => item.tags.includes(tag));
-    })
-    articlePart.innerHTML = list;
-};
-
 // SHOW ALL PHOTOGRAPHERS FOR HOMEPAGE
 export default class PageBuilder {
     showPhotographers(datas) {
