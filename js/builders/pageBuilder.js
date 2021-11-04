@@ -12,7 +12,7 @@ function filterActived () {
     let listTags = document.querySelector('ul')
     let getFilters = listTags.querySelectorAll('li');
     console.log('merde')
-    getFilters.addEventListener('click', onTagFilter (tag, list) => {
+    getFilters.addEventListener('click', onTagFilter ((tag, list) => {
         return list.filter((item) => item.tags.includes(tag));
     })
     articlePart.innerHTML = list;
