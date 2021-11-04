@@ -1,43 +1,32 @@
-// IMPORT DATAS
-import FishEyeApi from './fisheyeapi.js';
-
-// IMPORT PAGEBUILDER
-import PageBuilder from './builders/pageBuilder.js';
-
-// IMPORT PHOTOGRAPHERS' PAGES ELEMENTS
-import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
-import DropMenu from './photographer-page/dropmenu.js';
-
+import ShowPhotographers from './builders/pageBuilder.js';
 // DISPATCH DATAS
-const showDatas = () => {
-    const api = new FishEyeApi();
-    api.grabDatasApi().then((datas) => {
-        if (window.location.pathname.includes('./photographers.html')) {
-            const profile = new ProfilePhotographers()
-            const downMenu = new DropMenu()
-            const buildMedias = new BuilderMediaPhoto()
-            profile.showProfilePhotographers(datas);
-            downMenu.dropDownMenu(datas);
-            buildMedias.photoMedia(datas);
-        }
-        new PageBuilder().showPhotographers(datas);
-    }).catch(() => {
-        console.error('Failure in loading FishEyeApi datas');
+
+const grabDatasApi = async () => await fetch('../FishEyeApi/photographers.json', { mode: 'no-cors' }).then((dataReturn) => dataReturn.json()).catch(() => console.error('Failure in loading FishEyeApi datas'));
+
+const showDatas = async (photographers) => {
+    const element = document.querySelector('.photographers_part');
+    element.innerHTML = '';
+    photographers.forEach((photographer) => {
+        let photographerProfileCard = new ShowPhotographers(photographer);
+        element.innerHTML += photographerProfileCard.userProfile;
     });
 };
 
 const filterByTag = async (tag, photographers) => {
-    return photographers.filter((photographer) => photographer.tags.includes(tag));
+    if (tag in photographers.tags) {
+        return photographers.filter((photographer) => photographer.tags.includes(tag));
+    } else {
+        return photographers;
+    };
 };
 
-const init = () => {
+const init = async () => {
     const listTags = document.querySelector('ul');
     const getFilters = listTags.querySelectorAll('li');
-    let fishapi = new FishEyeApi();
-    const { photographers } = fishapi.grabDatasApi();
+    const { photographers } = await showDatas();
     getFilters.forEach((tag) => {
         tag.addEventListener('click', function () {
-            let sortedPhotogoraphers = filterByTag(tag.textContent.replace(/(\s|\#)+/g, '').toLowerCase(), photographers);
+            const sortedPhotogoraphers = filterByTag(tag.textContent.replace(/(\s|\#)+/g, '').toLowerCase(), photographers);
             showDatas(sortedPhotogoraphers)
         });
     });
