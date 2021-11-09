@@ -1,27 +1,12 @@
 import ScrollButton from './scrollButton.js';
+import FishEyeApi from '../fisheyeapi.js';
 
-// FILTERS SELECTED
-
-/* function onTagFilter = (tag, list) => {
-    return list.filter((item) => item.tags.includes(tag));
-};
-let articlePart = document.querySelectorAll('.photographerArticle').innerHTML; */
-
-/*function filterActived () {
-    let articlePart = document.querySelectorAll('.photographerArticle');
-    let listTags = document.querySelector('ul')
-    let getFilters = listTags.querySelectorAll('li');
-    console.log('merde')
-    getFilters.addEventListener('click', onTagFilter ((tag, list) => {
-        return list.filter((item) => item.tags.includes(tag));
-    })
-    articlePart.innerHTML = list;
-};*/
 
 // SHOW ALL PHOTOGRAPHERS FOR HOMEPAGE
 export default class PageBuilder {
-    showPhotographers(datas) {
-        let photographers = datas.photographers;
+    showPhotographers (data) {
+        document.getElementById('photographers_part').innerHTML = '';
+        const photographers = data
         photographers.map(photograph => {
             let photographersPart = document.getElementById('photographers_part');
             let photographersArticle = document.createElement('article');
@@ -38,8 +23,9 @@ export default class PageBuilder {
                 `<li data-filter="${tag}">#${tag}</li>`).join(' ')}</ul> 
             `
             photographersPart.appendChild(photographersArticle);
-            photographersArticle.innerHTML = modelPhotographerCard;
-        });
+            return (
+                photographersArticle.innerHTML = modelPhotographerCard);
+            });
         new ScrollButton().scrollBtn();
     };
 };

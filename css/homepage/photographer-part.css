@@ -1,7 +1,5 @@
 /* HOMEPAGE SECTION FOR PHOTOGRAPHERS */
 .photographerArticle {
-    margin: 6px;
-    padding: 3.5px;
     text-align: center;
     width: 264px;
 }
@@ -13,6 +11,7 @@
     justify-content: center;
     margin-right: 3.5px;
     margin-left: 6px;
+    padding: 0;
 }
 .filter-location {
     color: #901C1C;
@@ -37,7 +36,9 @@ section {
     margin-bottom: 60px;
     margin-top: 84px;
     padding: 0;
-    width: 100%;
+}
+section article {
+    flex: 1 1 33.333333333%
 }
 section img {
     background-color: #59CE26;
