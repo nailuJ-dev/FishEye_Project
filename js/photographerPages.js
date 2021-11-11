@@ -2,34 +2,32 @@
 import FishEyeApi from './fisheyeapi.js';
 import ShowPhotographers from './builders/photographerPageBuilder.js';
 
-/*
-// SHOW ALL PHOTOGRAPHERS FOR HOMEPAGE
-function showPhotographers (data) {
-    document.getElementById('photographers_part').innerHTML = '';
-    const photographers = data
-    photographers.map(photograph => {
-        let photographersPart = document.getElementById('photographers_part');
-        let photographersArticle = document.createElement('article');
-        photographersArticle.className = photograph.tags.join(' ') + ' photographerArticle';
-        let modelPhotographerCard = `
-            <a href="photographers.html?id=${photograph.id}" title="${photograph.name}">
-                <img src="${photograph.portrait}" alt="${photograph.alt}">
-                <h2 class="filter-name">${photograph.name}</h2>
-            </a>
-            <p class="filter-location">${photograph.city}, ${photograph.country}</p>
-            <p class="filter-tagline">${photograph.tagline}</p>
-            <p class="filter-price">${photograph.price}€/jour</p>
-            <ul class="filter">${photograph.tags.map(tag =>
-                `<li data-filter="${tag}">#${tag}</li>`).join(' ')}</ul> 
+(async () => {
+    const api = new FishEyeApi();
+    await api.grabDatasApi().then((datas) => {
+        const photographerDatas = datas.photographers
+        const id = window.location.search.split('id=')[1];
+        const photographers = !id ? photographerDatas : photographerDatas.filter(photographer => photographer.id === id);
+        const sectionPhotographerProfil = document.getElementById('photographer-page_header-section');
+        const templatePhotographerProfil = `
+            <article aria-label="Photographer Profil" class="photographer-page_header">
+                <div class='photographer-page_header_content'>
+                    <h2>${photographers.name}</h2>
+                    <p class="photographer-page_header_content_city">${photographers.city}, ${photographers.country}</p>
+                    <p class="photographer-page_header_content_tagline">${photographers.tagline}</p>
+                    <p >${photographers.tags.map(tag => `<a class="photographer-page_header_content_tags" href="index.html">#${tag}</a>`).join(" ")}</p>
+                </div>
+                <button class="photographer-page_contact" title='Contact Me'>Contactez-moi</button>
+                <a href='#' title='${photographers.alt}'><img src="${photographers.portrait}" alt="${photographers.alt}"></a>
+            </article>
             `
-        photographersPart.appendChild(photographersArticle);
-        return (
-            photographersArticle.innerHTML = modelPhotographerCard);
-        });
-    new ScrollButton().scrollBtn();
-};
-*/
+        sectionPhotographerProfil.innerHTML = templatePhotographerProfil;
+        new Modal().modal(photographersData);
+        new ContactForm().formFields();
+    });
+})();
 
+/*
 const elementContentGallery = document.querySelector('.photographer-page_gallery');
 
 // Filter content of media gallery with selected parameters
@@ -85,3 +83,4 @@ const init = async () => {
     await showPhotographerDatas();
     GalleryLightbox.init()
 };
+*/
