@@ -1,52 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FishEye - Profil d'un photographe</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/homepage.css">
-    <script src="https://kit.fontawesome.com/0896c633d4.js" crossorigin="anonymous"></script>
-    <script type="module" src="js/main.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FishEye - Profil d'un photographe</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/homepage.css">
+        <script src="https://kit.fontawesome.com/0896c633d4.js" crossorigin="anonymous"></script>
+        <script type="module" src="js/main.js"></script>
+    </head>
 
-<body>
+    <body class="photographer-page_layout">
     <!-- MAIN HEADER -->
-    <header role="banner">
         <a href="index.html" title="Homepage">
             <img src="./media/logo.png" alt="FishEye Home Page">
         </a>
-    </header>
+    <!-- PROFILE HEADER -->
+        <header class="photographer-page_header-section"></header>
 
-    <main>
-        <!-- PROFILE HEADER -->
-        <header id="photographer-profile" aria-label="photographer i">
-            <h1 id="photographer-profile-header"></h1>
-        </header>
+        <main class="photographer-page">
 
-        <!-- DROPLIST MENU -->
-        <div class="work-sorting-filter">
-            <span id="work-sorting-filter-text">Trier par</span>
-            <div id="work-sorting-filter-list">
-                <button class="sorting-button" aria-haspopup="listbox">Popularité</button>
-                <span class="fas fa-chevron-down arrow-down-open" role="button"></span>
-                <ul class="hidden-sorting-filter" role="listbox">
-                    <li class="sorting-filter" role="option">
-                        Popularité 
-                        <span class="fas fa-chevron-up arrow-up-close"></span>
-                    </li>
-                    <li class="sorting-filter" role="option">Date</li>
-                    <li class="sorting-filter" role="option">Titre</li>
-                </ul>
+            <!-- DROPLIST MENU -->
+            <div class="photographer-page_dropdown">
+                <label for="dropdownMenu">Trier par</label>
+                    <select id="dropdownMenu" class="photographer-page_dropdown-menu focus_element-secondary" aria-label="Ordered by">
+                        <option value="popularity" class="photographer-page_dropdown-menu-item">Popularité</option>
+                        <option value="date" class="photographer-page_dropdown-menu-item">Date</option>
+                        <option value="title" class="photographer-page_dropdown-menu-item">Titre</option>
+                    </select>
             </div>
-        </div>
-
-        <!-- WORK EXAMPLES -->
-        <section id="photographer-work-examples" aria-label="photographer work examples"></section>
-
-        <!-- BOX FOR LIKES AND PRICES -->
-        <div id="box-likes-price" aria-label="photographer likes and price per day"></div>
+            <div class="photographer-page_gallery" id="gallery"></div>
+        </main>
 
         <!-- MODAL / FORM CONTACT ME -->
         <div role="dialog" id="dialog-contact-form" aria-label="contact me form" aria-labelledby="form-title" aria-hidden="true">
@@ -89,17 +74,5 @@
                 <input type="submit" value="Envoyer" class="submit-button-form" id="submit-button-form" title="Send">
             </form>
         </div>
-
-        <!-- LIGHTBOX -->
-        <aside id="media-lightbox" aria-hidden="true">
-            <article id="media-lightbox-bodypart" role="dialog">
-                <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
-                <span class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous media"></span>
-                <span class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next media"></span>
-                <div id="media-lightbox-one-media"></div>
-                <div id="media-lightbox-media-name"></div>
-            </article>
-        </aside>
-    </main>
-</body>
+    </body>
 </html>

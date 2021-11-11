@@ -10,35 +10,35 @@ export default class ContactForm {
 
         // function to check string length
         function checkString (input, extra) {
-        const regExName = /^[a-zA-Z '.-]*$/
-        if (input.length >= extra && (regExName.test(input))) {
-            return true
-        }
-        input.parentElement.setAttribute('data-error-visible', 'true')
-        input.style.border = '2px solid #E54858'
-        return false
+            const regExName = /^[a-zA-Z '.-]*$/
+            if (input.length >= extra && (regExName.test(input))) {
+                return true
+            }
+            input.parentElement.setAttribute('data-error-visible', 'true')
+            input.style.border = '2px solid #E54858'
+            return false
         };
 
         // function to check email validity
         function checkEmail (input, extra) {
-        if (input) {
-            if (extra.test(input)) {
-                return true
+            if (input) {
+                if (extra.test(input)) {
+                    return true
+                }
             }
-        }
-        input.parentElement.setAttribute('data-error-visible', 'true')
-        input.style.border = '2px solid #E54858'
-        return false
+            input.parentElement.setAttribute('data-error-visible', 'true')
+            input.style.border = '2px solid #E54858'
+            return false
         };
 
         // function to check age
         function checkMessage (input) {
-        if (input.trim() !== '' || input.trim() != null) {
-            return true
-        }
-        input.parentElement.setAttribute('data-error-visible', 'true')
-        input.style.border = '2px solid #E54858'
-        return false
+            if (input.trim() !== '' || input.trim() != null) {
+                return true
+            }
+            input.parentElement.setAttribute('data-error-visible', 'true')
+            input.style.border = '2px solid #E54858'
+            return false
         };
 
         // Show console message
