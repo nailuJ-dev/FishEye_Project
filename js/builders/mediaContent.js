@@ -5,7 +5,7 @@ class MediaContentBuilder {
         } else if (datas.type === 'video') {
             return new VideoContent(datas);
         } else {
-            throw 'Media content type is unknown'
+            throw 'Unknown Media Type'
         };
     };
 };
