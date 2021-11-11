@@ -76,7 +76,7 @@ async function showPhotographerDatas() {
         elementContentGallery.innerHTML = '';
         const filter = filterByCriterias(contentMedia, event.target.value);
         updateContentMedia(filter);
-        /* GalleryLightbox.init() will add when lightbox will be done */
+        GalleryLightbox.init();
     })
 };
 
