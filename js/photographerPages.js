@@ -1,5 +1,6 @@
 // import ScrollButton from './builders/scrollButton.js';
 import FishEyeApi from './fisheyeapi.js';
+import ShowPhotographers from './builders/photographerPageBuilder.js';
 
 /*
 // SHOW ALL PHOTOGRAPHERS FOR HOMEPAGE
@@ -67,7 +68,7 @@ async function showPhotographerDatas() {
     const ident = parameters.get('id');
     const photographerDatasSelected = photographers.find((photographer) => photographer.id === ident);
     const photographerBuilder = new ShowPhotographers(photographerDatasSelected);
-    photographerBuilder.documentTitle;
+    photographerBuilder.document.title;
 
     const contentMedia = media.filter((media) => media.photographerId === ident)
     updateContentMedia(contentMedia);

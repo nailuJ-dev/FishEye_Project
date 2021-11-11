@@ -2,11 +2,11 @@
 import FishEyeApi from './fisheyeapi.js';
 
 // IMPORT PAGEBUILDER
-import PageBuilder from './builders/pageBuilder.js';
+import PageBuilder from './builders/homepageBuilder.js';
 
 // IMPORT PHOTOGRAPHERS' PAGES ELEMENTS
-import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
-import DropMenu from './photographer-page/dropmenu.js';
+//import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
+//import DropMenu from './photographer-page/dropmenu.js';
 
 // DISPATCH DATAS
 /*(async () => {

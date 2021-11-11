@@ -1,4 +1,4 @@
-class ShowPhotographers {
+export default class ShowPhotographers {
     constructor (datas, choices) {
         this._id = datas.id
         this._city = datas.city
@@ -21,20 +21,6 @@ class ShowPhotographers {
 
     get documentTitle () {
         document.title += ` - ${this._name}`
-    };
-
-    get profileUser () {
-        return `
-            <a href="pages/photographer-page.html?id=${this._id}" class="focus_element" aria-label="Aller sur la page de ${this._name} basé dans la ville de ${this.localization} son tarif journalier est de ${this._price} euros par jour. Sa spécialité est ${this._tags} et son mantra est ${this._tagline}" >
-                <article class="photographer">
-                    <img class="photographer_img" src="${this.picture}" alt="Photographie de profil de ${this._name}">
-                    <h2 class="photographer_name">${this._name}</h2>
-                    <p class="photographer_localization">${this.localization}</p>
-                    <p class="photographer_tagline">${this._tagline}</p>
-                    <p class="photographer_price">${this._price}€/jour</p>
-                    <ul class="photographer_taglist">${this._tags.map(tag => `<li class="photographer_tag">#${tag}</li>`).join('')}</ul>
-                </article>
-            </a>`
     };
 
     get profileHeader () {

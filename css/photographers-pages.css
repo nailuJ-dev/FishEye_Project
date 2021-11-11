@@ -1,1 +1,135 @@
-@import './photographer-page/header-photographer.css'
+.photographer-page {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+  
+.photographer-page_logo {
+    height: 37.5px;
+    left: 20px;
+    margin-bottom: 2rem;
+    position: absolute;
+    top: 40px;
+    width: 150px;
+}
+  
+.photographer-page_header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+  
+.photographer-page_header_content_title {
+    color: #d3573c;
+    font-size: 1.9rem;
+    line-height: 1.8rem;
+    margin: 0;
+}
+  
+.photographer-page_header_content_localization {
+    color: #911c1c;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0.5rem 0rem;
+}
+  
+.photographer-page_header_content_tagline {
+    font-size: 14px;
+    margin: 0;
+    color: #525252;
+}
+  
+.photographer-page_header_content_taglist {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+  
+.photographer-page_header_content_tags {
+    border-radius: 12px;
+    border: 1px solid #c4c4c4;
+    color: #911c1c;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 0rem 0.5rem;
+    text-decoration: none;
+}
+  
+.photographer-page_header_photo {
+    border-radius: 50%;
+    height: 120px;
+    object-fit: cover;
+    width: 120px;
+}
+  
+.photographer-page_gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+  
+.photographer-page_gallery_media {
+    cursor: pointer;
+    border-radius: 5px;
+    height: 190px;
+    object-fit: cover;
+    width: 100%;
+}
+  
+.photographer-page_gallery_media:focus {
+    border: 1px solid #911c1c;
+}
+  
+.photographer-page_gallery_media_footer {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.photographer-page_gallery_media_footer_figcaption {
+    margin-top: 1rem;
+}
+  
+.photographer-page_gallery_media_footer_like-section {
+    display: flex;
+    flex-direction: row;
+}
+  
+.photographer-page_gallery_media_footer_like-section-button {
+    background: none;
+    border: none;
+    color: #911c1c;
+    font-size: 1.6rem;
+}
+  
+.photographer-page_contact {
+    display: flex;
+    justify-content: center;
+}
+  
+.photographer-page_contact_button {
+    background-color: #911c1c;
+    border-radius: 5px;
+    border: none;
+    bottom: 1rem;
+    color: white;
+    cursor: pointer;
+    font-size: 23.44px;
+    height: 80px;
+    left: 50%;
+    margin-left: -150px;
+    position: fixed;
+    width: 300px;
+}
+
+select {
+    background-color: #911c1c;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    height: 59px;
+    padding: 0.2rem;
+    margin-top: 2rem;
+    width: 170px;
+}
