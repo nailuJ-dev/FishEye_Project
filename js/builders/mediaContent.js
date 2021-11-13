@@ -1,17 +1,17 @@
 export default class MediaContentBuilder {
-    Constructor(datas) {
-        if (datas.type === 'image') {
-            return new PhotographyContent(datas);
-        } else if (datas.type === 'video') {
-            return new VideoContent(datas);
+    constructor (data) {
+        if (data.type == 'image') {
+            return new PhotographyContent(data);
+        } else if (data.type == 'video') {
+            return new VideoContent(data);
         } else {
-            throw 'Unknown Media Type'
+            throw new Error('Media type is unknown')
         };
     };
 };
 
 class PhotographyContent {
-    constructor(datas) {
+    constructor (datas) {
         this._srcImage = datas.image;
         this._likesImage = datas.likes;
         this._titleImage = datas.title;

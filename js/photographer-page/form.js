@@ -3,10 +3,14 @@ export default class ContactForm {
     formFields () {
         // DOM Elements
         const contactFormElement = document.getElementById('contact-form')
-        let firstname = document.getElementById('firstname')
-        let lastname = document.getElementById('lastname')
-        let email = document.getElementById('email')
-        let message = document.getElementById('message')
+        const modal = document.getElementById('dialog-contact-form')
+        const buttonContactMe = document.querySelector('.photographer-page_contact_button')
+        const spanCross = document.getElementsByClassName('close-form-icon')[0]
+        const firstname = document.getElementById('firstname')
+        const lastname = document.getElementById('lastname')
+        const email = document.getElementById('email')
+        const message = document.getElementById('message')
+        const buttonSubmit = document.getElementById('submit-button-form')
 
         // function to check string length
         function checkString (input, extra) {
