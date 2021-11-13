@@ -74,7 +74,7 @@ async function showPhotographerDatas() {
     const photographerDatasSelected = photographers.find((photographer) => photographer.id == ident);
     console.log(photographerDatasSelected)
 
-/*    const photographerBuilder = new ShowPhotographers(photographerDatasSelected).documentTitle;
+/*    const photographerBuilder = new ShowPhotographers(photographerDatasSelected);
     photographerBuilder.documentTitle(); */
 
 /*
