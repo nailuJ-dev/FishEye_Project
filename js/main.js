@@ -36,8 +36,8 @@ import PageBuilder from './builders/homepageBuilder.js';
 
 (async () => {
     const api = new FishEyeApi();
-    await api.grabDatasApi().then((datas) => {
-        const photographerList = datas.photographers
+    await api.grabDatasApi().then((data) => {
+        const photographerList = data.photographers
         new PageBuilder().showPhotographers(photographerList);
         const listTags = document.querySelector('ul');
         const getFilters = listTags.querySelectorAll('li');
@@ -47,5 +47,6 @@ import PageBuilder from './builders/homepageBuilder.js';
                 new PageBuilder().showPhotographers(filteredPhotographersbyTags);
             });
         });
+
     })
 })();

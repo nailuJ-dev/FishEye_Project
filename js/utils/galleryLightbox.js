@@ -1,4 +1,4 @@
-class GalleryLightbox {
+export default class GalleryLightbox {
     static init() {
 		const galleryPart = document.querySelector('.photographer-page_gallery');
 		const linksArr = Array.from(galleryPart.querySelectorAll('img[src$=".jpg"],source[src$=".mp4"]'));
@@ -18,8 +18,9 @@ class GalleryLightbox {
 			});
 		});
 	};
+
  // alt deleted if no description added in json
-    constructor (url, gallery, alt) {
+    Constructor (url, gallery, alt) {
 		this.element = this.buildDOM(url, alt);
 		this.gallery = gallery;
 		this.loadContent(url, alt, gallery);

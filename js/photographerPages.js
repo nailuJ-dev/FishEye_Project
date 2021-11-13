@@ -1,33 +1,40 @@
 // import ScrollButton from './builders/scrollButton.js';
 import FishEyeApi from './fisheyeapi.js';
 import ShowPhotographers from './builders/photographerPageBuilder.js';
+import Modal from './photographer-page/modal.js';
+import ContactForm from './photographer-page/form.js';
+import GalleryLightbox from './utils/galleryLightbox.js';
+import MediaContentBuilder from './builders/mediaContent.js';
 
-(async () => {
+/*
+async function displayPhotgrapherPage() {
     const api = new FishEyeApi();
     await api.grabDatasApi().then((datas) => {
         const photographerDatas = datas.photographers
         const id = window.location.search.split('id=')[1];
         const photographers = !id ? photographerDatas : photographerDatas.filter(photographer => photographer.id === id);
         const sectionPhotographerProfil = document.getElementById('photographer-page_header-section');
+        console.log(photographers)
         const templatePhotographerProfil = `
-            <article aria-label="Photographer Profil" class="photographer-page_header">
-                <div class='photographer-page_header_content'>
-                    <h2>${photographers.name}</h2>
-                    <p class="photographer-page_header_content_city">${photographers.city}, ${photographers.country}</p>
+            <div class="photographer-page_header">
+                <div class="photographer-page_header_content">
+                    <h1 class="photographer-page_header_content_title">${photographers.name}</h1>
+                    <p class="photographer-page_header_content_localization">${photographers.localization}</p>
                     <p class="photographer-page_header_content_tagline">${photographers.tagline}</p>
-                    <p >${photographers.tags.map(tag => `<a class="photographer-page_header_content_tags" href="index.html">#${tag}</a>`).join(" ")}</p>
+                    <ul class="photographer-page_header_content_taglist">${photographers.tags.map(tag => `<li href="../index.html" class="photographer-page__header__content__tags">#${tag}</li>`).join(" ")}</ul>
                 </div>
-                <button class="photographer-page_contact" title='Contact Me'>Contactez-moi</button>
-                <a href='#' title='${photographers.alt}'><img src="${photographers.portrait}" alt="${photographers.alt}"></a>
-            </article>
+                <button class="photographer-page_contact_button focus_element-secondary" onclick="displayPhotographerModale()" aria-label="Contacter le photographe ${this.name}">Contactez-moi
+                </button>
+                <img src="${photographers.picture}" class="photographer-page_header_photo" alt="Photographie de profil de ${photographers.name}">
+            </div>
             `
         sectionPhotographerProfil.innerHTML = templatePhotographerProfil;
-        new Modal().modal(photographersData);
+        new Modal().modal(photographerDatas);
         new ContactForm().formFields();
     });
-})();
+}(); */
 
-/*
+
 const elementContentGallery = document.querySelector('.photographer-page_gallery');
 
 // Filter content of media gallery with selected parameters
@@ -64,23 +71,33 @@ async function showPhotographerDatas() {
     const { media, photographers } = await api.grabDatasApi()
     const parameters = new URLSearchParams(document.location.search.substring(1));
     const ident = parameters.get('id');
-    const photographerDatasSelected = photographers.find((photographer) => photographer.id === ident);
-    const photographerBuilder = new ShowPhotographers(photographerDatasSelected);
-    photographerBuilder.document.title;
+    const photographerDatasSelected = photographers.find((photographer) => photographer.id == ident);
+    console.log(photographerDatasSelected)
 
-    const contentMedia = media.filter((media) => media.photographerId === ident)
+/*    const photographerBuilder = new ShowPhotographers(photographerDatasSelected).documentTitle;
+    photographerBuilder.documentTitle(); */
+
+/*
+    const contentMedia = media.filter((media) => media.photographerId == ident)
     updateContentMedia(contentMedia);
-
+*/
     document.addEventListener('change', function (event) {
         elementContentGallery.innerHTML = '';
         const filter = filterByCriterias(contentMedia, event.target.value);
         updateContentMedia(filter);
         GalleryLightbox.init();
     })
+
+    const photographerHeader = document.querySelector('.photographer-page_header-section');
+	const photographerFooter = document.querySelector('.photographer-page_footer-section');
+    console.log(new ShowPhotographers(photographerDatasSelected).userHeader)
+	photographerHeader.innerHTML += new ShowPhotographers(photographerDatasSelected).userHeader;
+	photographerFooter.innerHTML += new ShowPhotographers(photographerDatasSelected).userFooter;
 };
 
 const init = async () => {
     await showPhotographerDatas();
-    GalleryLightbox.init()
+    // GalleryLightbox.init()
 };
-*/
+
+init();

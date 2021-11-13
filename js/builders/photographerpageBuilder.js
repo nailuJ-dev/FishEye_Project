@@ -1,13 +1,13 @@
 export default class ShowPhotographers {
-    constructor (datas, choices) {
-        this._id = datas.id
-        this._city = datas.city
-        this._country = datas.country
-        this._name = datas.name
-        this._picture = datas.portrait
-        this._price = datas.price
-        this._tagline = datas.tagline
-        this._tags = datas.tags
+    Constructor (data, choices) {
+        this._id = data.id
+        this._city = data.city
+        this._country = data.country
+        this._name = data.name
+        this._picture = data.portrait
+        this._price = data.price
+        this._tagline = data.tagline
+        this._tags = data.tags
         this._totalLikes = choices
     };
 

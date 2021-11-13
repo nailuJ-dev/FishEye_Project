@@ -1,5 +1,5 @@
-class MediaContentBuilder {
-    constructor(datas) {
+export default class MediaContentBuilder {
+    Constructor(datas) {
         if (datas.type === 'image') {
             return new PhotographyContent(datas);
         } else if (datas.type === 'video') {
