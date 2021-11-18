@@ -1,6 +1,6 @@
 // check with css done and maybe replace data-error-visible by project 4 error message with span in html form
-export default class ContactForm {
-    formFields () {
+
+    document.getElementById('contact-me-button').onclick = function formFields () {
         // DOM Elements
         const contactFormElement = document.getElementById('contact-form')
         const modal = document.getElementById('dialog-contact-form')
@@ -11,6 +11,27 @@ export default class ContactForm {
         const email = document.getElementById('email')
         const message = document.getElementById('message')
         const buttonSubmit = document.getElementById('submit-button-form')
+
+        modal.onclick = function () {
+            modal.style.display = 'block';
+        };
+
+        spanCross.onclick = function () {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function () {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            };
+        };
+
+        document.addEventListener('keydown', function(el) {
+            let keyCode = el.key;
+            if (keyCode === 'Escape') {
+                modal.style.display = 'none';
+            };
+        });
 
         // function to check string length
         function checkString (input, extra) {
@@ -55,7 +76,7 @@ export default class ContactForm {
         };
 
         // Events for submiting the form
-        contactFormElement.addEventListener('submit', function (event) {
+        modal.addEventListener('submit', function (event) {
             event.preventDefault()
             const inputObject = [
                 { input: document.getElementById('firstname').value, functionTest: checkString, extra: 2 },
@@ -71,10 +92,10 @@ export default class ContactForm {
                     functionCount++
                     if (functionCount === inputObject.length) {
                         formValidConsoleLog(firstname, lastname, email, message)
-                        contactFormElement.reset()
+                        modal.reset()
+                        modal.style.display = 'none'
                     };
                 };
             });
         });
     };
-};

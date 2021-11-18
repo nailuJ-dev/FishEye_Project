@@ -1,7 +1,6 @@
 // import ScrollButton from './builders/scrollButton.js';
 import FishEyeApi from './fisheyeapi.js';
 import ShowPhotographers from './builders/photographerPageBuilder.js';
-import ContactForm from './photographer-page/form.js';
 import GalleryLightbox from './utils/galleryLightbox.js';
 import MediaContentBuilder from './builders/mediaContent.js';
 
@@ -43,12 +42,10 @@ async function showPhotographerDatas() {
     const parameters = new URLSearchParams(document.location.search.substring(1));
     const ident = parameters.get('id');
     const photographerDatasSelected = photographers.find((photographer) => photographer.id == ident);
-    const showPhotographer = new ShowPhotographers(photographerDatasSelected)
-  
+    const showPhotographer = new ShowPhotographers(photographerDatasSelected);
     showPhotographer.documentTitle;
 
-
-	const contentMedia = media.filter((media) => media.photographerId == ident)
+	const contentMedia = media.filter((media) => media.photographerId === ident); // check for problem display gallery
 	updateContentMedia(contentMedia);
 	
     document.addEventListener('change', function (event) {
@@ -56,7 +53,7 @@ async function showPhotographerDatas() {
 	    const filter = filterByCriterias(contentMedia, event.target.value);
 	    updateContentMedia(filter);
 	    GalleryLightbox.init();
-    })
+    });
 
     const photographerHeader = document.querySelector('.photographer-page_header-section');
     const photographerFooter = document.querySelector('.photographer-page_footer-section');
