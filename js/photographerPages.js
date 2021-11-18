@@ -45,7 +45,7 @@ async function showPhotographerDatas() {
     const showPhotographer = new ShowPhotographers(photographerDatasSelected);
     showPhotographer.documentTitle;
 
-	const contentMedia = media.filter((media) => media.photographerId === ident); // check for problem display gallery
+	const contentMedia = media.filter((media) => media.photographerId == ident); // check for problem to display gallery
 	updateContentMedia(contentMedia);
 	
     document.addEventListener('change', function (event) {
