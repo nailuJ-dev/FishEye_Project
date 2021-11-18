@@ -1,38 +1,29 @@
 // INTERACTING WITH MODAL WHEN CLICKING ON CONTACT ME BUTTON
 
-export default class Modal {
-    // Events when clicking
-    modal(datas) {
-        const modalButton = document.getElementById('photographer-contact'); // add this ID in the photagrapher page builder
-        const closeButton = document.getElementsByClassName('close-form-icon'); // select the cross icon
+// DOM Elements
+const modalBg = document.getElementById('dialog-contact-form')
+const modal = document.getElementById('contact-me-button')
+const spanCross = document.getElementsByClassName('close-form-icon')[0]
 
-        if (modalButton) {
-            modalButton.addEventListener('click', this.launchModal);
-            this.formPhotographerName(datas);
-        }
-        if (closeButton) {
-            closeButton[0].addEventListener('click', this.closeModal);
-        }
-    };
+modal.forEach((btn) => btn.addEventListener('click', openModal));
 
-    // Launch Modal
-    openModal() {
-        const modalBg = document.getElementById('dialog-contact-form');
-        modalBg.style.display = 'block';  // stay alert on the css name for css file
-    }
+function openModal () {
+    modalBg.style.display = 'block';
+};
 
-    // Close Modal
-    closeModal() {
-        const modalBg = document.getElementById('dialog-contact-form');
-        modalBg.style.display = 'none';
-    };
+spanCross.addEventListener('click', function (closeModal) {
+    modalBg.style.display = 'none';
+});
 
-    // Add photographer names in form
-    formPhotographerName(datas) {
-        let id = window.location.search.split('id=')[1];
-        let photographers = !id ? datas : datas.filter(photographer => photographer.id === id);
-        let photographerName = document.getElementById('photographer-name-for-form');
-        let photographerNameTemplate = `${photographers[0].name}`;
-        photographerName.innerHTML = photographerNameTemplate;
+window.onclick = function () {
+    if (event.target == modal) {
+        modal.style.display = 'none';
     };
 };
+
+document.addEventListener('keydown', function(el) {
+    let keyCode = el.key;
+    if (keyCode === 'Escape') {
+        modal.style.display = 'none';
+    };
+});
