@@ -1,5 +1,7 @@
 // check with css done and maybe replace data-error-visible by project 4 error message with span in html form
 
+// rebuild this file with a clear css
+
     document.getElementById('contact-me-button').onclick = function formFields () {
         // DOM Elements
         const contactFormElement = document.getElementById('contact-form')
