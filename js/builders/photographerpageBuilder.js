@@ -1,5 +1,5 @@
 export default class ShowPhotographers {
-    constructor (data, choices) {
+    constructor (data, likes) {
         this._id = data.id
         this._city = data.city
         this._country = data.country
@@ -8,7 +8,7 @@ export default class ShowPhotographers {
         this._price = data.price
         this._tagline = data.tagline
         this._tags = data.tags
-        this._totalLikes = choices
+        this._totalLikes = likes
     };
 
     get picture () {
@@ -49,5 +49,15 @@ export default class ShowPhotographers {
             <p class="photographer-page_footer_price" aria-label="Tarif du photographe ${this._price} euros par jour">${this._price}€/jour</p>
         </section>
         `
+    };
+
+    get userLikesReload() {
+        let totalLikesEl = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');
+        let sumOfLikes = 0
+        totalLikesEl.forEach(function (like) {
+            let likeEl = Number(like.textContent)
+            sumOfLikes += likeEl;
+        });
+        return sumOfLikes;
     };
 };

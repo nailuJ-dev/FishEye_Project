@@ -48,7 +48,7 @@ async function showPhotographerDatas() {
     showPhotographer.documentTitle;
 
 
-	const contentMedia = media.filter((media) => media.photographerId === ident)
+	const contentMedia = media.filter((media) => media.photographerId == ident)
 	updateContentMedia(contentMedia);
 	
     document.addEventListener('change', function (event) {
@@ -64,8 +64,48 @@ async function showPhotographerDatas() {
     photographerFooter.innerHTML += showPhotographer.profileFooter();
 };
 
+function getLikesStatus() {
+    const likesPart = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');
+    
+    function likesReloader() {
+        let countLikes = document.querySelector('.photographer-page_footer_aside_total-likes');
+		let totalLikes= document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');
+		let sumOfLikes = 0;
+		totalLikes.forEach(function (like) {
+			let likeAmount = Number(like.textContent)
+			sumOfLikes += likeAmount;
+		});
+		countLikes.innerHTML = sumOfLikes;
+		return sumOfLikes;
+    };
+
+    likesPart.forEach(function (e) {
+		i.addEventListener('click', function () {
+			let countElements = e.querySelector('.photographer-page_gallery_media_footer_like-section-counter');
+			let buttonLike = e.querySelector('.photographer-page_gallery_media_footer_like-section-button');
+			let iconButtonLike = e.querySelector('.fa-heart');
+			let sumOfLike = Number(countElements.textContent);
+			const liked = e.dataset.liked === 'true';
+			e.dataset.liked = !liked;
+			countElements.innerHTML = sumOfLike + (!liked ? 1 : -1);
+			if (liked) {
+				likesReloader();
+				iconButtonLike.classList.add('far');
+				iconButtonLike.classList.remove('fas');
+				buttonLike.ariaLabel = "J'aime pas";
+			} else if (!liked) {
+				likesReloader();
+				iconButtonLike.classList.add('fas');
+				iconButtonLike.classList.remove('far');
+				buttonLike.ariaLabel = "J'aime";
+			}
+		});
+	});
+};
+
 const init = async () => {
     await showPhotographerDatas();
+    getLikesStatus();
   // GalleryLightbox.init()
 };
 

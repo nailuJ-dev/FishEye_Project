@@ -20,8 +20,8 @@ export default class GalleryLightbox {
 	};
 
  // alt deleted if no description added in json
-    Constructor (url, gallery, alt) {
-		this.element = this.buildDOM(url, alt);
+    constructor (url, gallery, alt) {
+		this.element = this.buildHtmlDom(url, alt);
 		this.gallery = gallery;
 		this.loadContent(url, alt, gallery);
 		this.formatSrcContentLightbox(url);
