@@ -1,17 +1,40 @@
-export default class MediaContentBuilder {
+/* export default class MediaContentBuilder {
     constructor (data) {
-        if (data.type === 'image') {
-            return new PhotographyContent(data);
-        } else if (data.type === 'video') {
-            return new VideoContent(data);
-        } else {
-            const err = Error('Content is unknown')
-            throw err
-        };
+        try {
+            if (data.type === 'image') {
+                return new PhotographyContent(data);
+            } else if (data.type === 'video') {
+                return new VideoContent(data);
+            } else {
+                const err = Error('Content is unknown')
+                throw err
+            }} catch (err) {
+                return err
+            }
+        }
     };
-};
+}; */
 
-class PhotographyContent {
+/* class MediaContentFactory {
+    constructor (datas) {
+        this._dataContent = null;
+        this._srcContent = datas.image || datas.video;
+        this._likesImage = datas.likes;
+        this._titleImage = datas.title;
+        this._photographerIdImage = datas.photographerId;
+
+    if (datas.image) {
+            this._dataContent = this._srcContent
+            return createImageContent();
+        } else if (datas.video) {
+            this._dataContent = this._srcContent
+            return createVideoContent();
+        } else {
+            return wrongContent();
+        };
+}; */
+
+export class PhotographyContent {
     constructor (datas) {
         this._srcImage = datas.image;
         this._likesImage = datas.likes;
@@ -23,7 +46,7 @@ class PhotographyContent {
     createHtmlContent () {
         return `
         <figure class="photographer-page_gallery_card" aria-label="${this._titleImage} upper closing view">
-            <img class="photographer-page_gallery_media focus_element-secondary" loading="lazy" src="../assets/medias/${this._photographerIdImage}/${this._srcImage}" alt="${this._altImage}"/>
+            <img class="photographer-page_gallery_media focus_element-secondary" loading="lazy" src="./media/${this._photographerIdImage}/${this._srcImage}" alt="${this._altImage}"/>
             <footer class="photographer-page_gallery_media_footer">
                 <figcaption class="photographer-page_gallery_media_footer_figcaption">${this._titleImage}</figcaption>
                 <div class="photographer-page_gallery_media_footer_like-section">
@@ -36,7 +59,7 @@ class PhotographyContent {
     };
 };
 
-class VideoContent {
+export class VideoContent {
     constructor (datas) {
         this._srcVideo = datas.video;
         this._likesVideo = datas.likes;
@@ -49,7 +72,7 @@ class VideoContent {
         return `
         <figure class="photographer-page_gallery_card">
             <video controls class="photographer-page_gallery_media focus_element-secondary">
-                <source src="../assets/medias/${this._photographerIdVideo}/${this._srcVideo}" alt="${this._altVideo}"/>
+                <source src="./media/${this._photographerIdVideo}/${this._srcVideo}" alt="${this._altVideo}"/>
             </video>
             <footer class="photographer-page_gallery_media_footer">
                 <figcaption class="photographer-page_gallery_media_footer_figcaption">${this._titleVideo}</figcaption>

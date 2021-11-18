@@ -2,7 +2,7 @@
 import FishEyeApi from './fisheyeapi.js';
 import ShowPhotographers from './builders/photographerPageBuilder.js';
 import GalleryLightbox from './utils/galleryLightbox.js';
-import MediaContentBuilder from './builders/mediaContent.js';
+import { PhotographyContent, VideoContent } from './builders/mediaContent.js';
 
 const elementContentGallery = document.querySelector('.photographer-page_gallery');
 
@@ -28,8 +28,8 @@ const filterByCriterias = (contentMedia, filter) => {
 
 function updateContentMedia (contentGallery) {
     contentGallery.forEach((media) => {
-	    let medias = new MediaContentBuilder(media);
-	    elementContentGallery.innerHTML = medias.createHtmlContent()
+        const medias = media.image ? new PhotographyContent(media) : new VideoContent(media);
+	    elementContentGallery.innerHTML += medias.createHtmlContent()
     });
 }
 
@@ -45,7 +45,7 @@ async function showPhotographerDatas() {
     const showPhotographer = new ShowPhotographers(photographerDatasSelected);
     showPhotographer.documentTitle;
 
-	const contentMedia = media.filter((media) => media.photographerId == ident); // check for problem to display gallery
+	const contentMedia = media.filter((media) => media.photographerId == ident); // check for problem todisplay gallery
 	updateContentMedia(contentMedia);
 	
     document.addEventListener('change', function (event) {
@@ -77,7 +77,7 @@ function getLikesStatus() {
     };
 
     likesPart.forEach(function (e) {
-		i.addEventListener('click', function () {
+		e.addEventListener('click', function () {
 			let countElements = e.querySelector('.photographer-page_gallery_media_footer_like-section-counter');
 			let buttonLike = e.querySelector('.photographer-page_gallery_media_footer_like-section-button');
 			let iconButtonLike = e.querySelector('.fa-heart');
