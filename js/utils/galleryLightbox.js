@@ -6,12 +6,12 @@ export default class GalleryLightbox {
 		linksArr.forEach((linkArr) => {
 			linkArr.addEventListener('click', (el) => {
 				el.preventDefault();
-				new GalleryLightbox(e.currentTarget.getAttribute('src'), galleryContent);
+				new GalleryLightbox(el.currentTarget.getAttribute('src'), galleryContent);
 			});
 			linkArr.addEventListener('keyup', (el) => {
 				if (el.keyCode === 13) {
 					el.preventDefault();
-					new GalleryLightbox(e.currentTarget.getAttribute('src'), galleryContent);
+					new GalleryLightbox(el.currentTarget.getAttribute('src'), galleryContent);
 				} else {
 					return;
 				};
@@ -31,10 +31,10 @@ export default class GalleryLightbox {
 	};
 
 	formatSrcContentLightbox(src) {
-		let lightboxContentLink = src.split('/');
-		lightboxContentLink.splice(4, 0, 'lightbox');
-		const formatedLightboxContentLink = lightboxContentLink.join('/');
-		return formatedLightboxContentLink;
+		let lightboxContentLink = src //.split('/');
+		//lightboxContentLink.splice(4, 0, 'lightbox');
+		//const formatedLightboxContentLink = lightboxContentLink.join('/');
+		return lightboxContentLink;
 	};
 
     loadContent(url, alt) {
@@ -44,7 +44,7 @@ export default class GalleryLightbox {
 			const video = document.createElement('video');
 			const wrapper = this.element.querySelector('.lightbox_container');
 			const desc = document.createElement('p');
-			desc.innerHTML += this.getFormatedTitle(url);
+			desc.innerHTML += this.getFormatTitle(url);
 			wrapper.innerHTML = '';
 			wrapper.appendChild(video);
 			wrapper.appendChild(desc);
@@ -54,7 +54,7 @@ export default class GalleryLightbox {
 			const image = new Image();
 			const wrapper = this.element.querySelector('.lightbox_container');
 			const desc = document.createElement('p');
-			desc.innerHTML += this.getFormatedTitle(url);
+			desc.innerHTML += this.getFormatTitle(url);
 			wrapper.innerHTML = "";
 			wrapper.appendChild(image);
 			wrapper.appendChild(desc);

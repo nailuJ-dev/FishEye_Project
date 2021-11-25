@@ -11,8 +11,10 @@
         <script type="module" src="./js/photographerPages.js"></script>
         <script type="module" src="./js/builders/mediaContent.js"></script>
         <script type="module" src="./js/builders/photographerpageBuilder.js"></script>
-       <!-- <script type="module" src="./js/photographer-page/form.js"></script> --> 
+      <!-- <script type="module" src="./js/photographer-page/form.js"></script> --> 
+        <script type="module" src="./js/photographer-page/likeseval.js"></script>
         <script type="module" src="./js/utils/galleryLightbox.js"></script>
+        <script type="module" src="./js/utils/modal.js"></script>
         <script type="module" src="./js/fisheyeapi.js"></script>
         
     </head>
@@ -20,7 +22,7 @@
     <body class="photographer-page_layout">
     <!-- MAIN HEADER -->
         <a href="index.html" title="Homepage">
-            <img src="./media/logo.png" alt="FishEye Home Page">
+            <img class="logo-page" src="./media/logo.png" alt="FishEye Home Page">
         </a>
     <!-- PROFILE HEADER -->
         <header class="photographer-page_header-section"></header>
@@ -40,7 +42,7 @@
         </main>
 
         <!-- MODAL / FORM CONTACT ME -->
-        <div role="dialog" id="dialog-contact-form" aria-label="contact me form" aria-labelledby="form-title" aria-hidden="true">
+        <div role="dialog" class="dialog-contact-form" id="dialog-contact-form" aria-label="contact me form" aria-labelledby="form-title">
             <form action="photographers.html" method="post" id="contact-form">
                 <header>
                     <h1>

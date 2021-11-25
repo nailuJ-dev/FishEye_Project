@@ -1,15 +1,13 @@
 // INTERACTING WITH MODAL WHEN CLICKING ON CONTACT ME BUTTON
 
 // DOM Elements
-const modalBg = document.getElementById('dialog-contact-form')
-const modal = document.getElementById('contact-me-button')
+const modalBg = document.querySelector('.dialog-contact-form')
+const modal = document.querySelectorAll('.photographer-page_contact_button')
 const spanCross = document.getElementsByClassName('close-form-icon')[0]
 
-modal.forEach((btn) => btn.addEventListener('click', openModal));
-
-function openModal () {
+modal.forEach((btn) => btn.addEventListener('click', function (openModal) {
     modalBg.style.display = 'block';
-};
+}));
 
 spanCross.addEventListener('click', function (closeModal) {
     modalBg.style.display = 'none';

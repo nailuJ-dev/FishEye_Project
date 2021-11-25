@@ -62,7 +62,7 @@ async function showPhotographerDatas() {
 };
 
 function getLikesStatus() {
-    const likesPart = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');
+    const likesPart = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section');
     
     function likesReloader() {
         let countLikes = document.querySelector('.photographer-page_footer_aside_total-likes');
@@ -100,10 +100,11 @@ function getLikesStatus() {
 	});
 };
 
+
 const init = async () => {
     await showPhotographerDatas();
     getLikesStatus();
-  // GalleryLightbox.init()
+    GalleryLightbox.init()
 };
 
 init();

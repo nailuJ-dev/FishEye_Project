@@ -51,7 +51,7 @@ export default class ShowPhotographers {
         `
     };
 
-    get userLikesReload() {
+    userLikesReload() {
         let totalLikesEl = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');
         let sumOfLikes = 0
         totalLikesEl.forEach(function (like) {

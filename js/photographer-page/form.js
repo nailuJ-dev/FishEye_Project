@@ -1,11 +1,12 @@
 // check with css done and maybe replace data-error-visible by project 4 error message with span in html form
 
 // rebuild this file with a clear css
+console.log(document.getElementsByClassName('photographer-page_contact_button'))
 
-    document.getElementById('contact-me-button').onclick = function formFields () {
+    document.getElementsByClassName('photographer-page_contact_button').onclick = function formFields () {
         // DOM Elements
         const contactFormElement = document.getElementById('contact-form')
-        const modal = document.getElementById('dialog-contact-form')
+        const modal = document.querySelector('dialog-contact-form')
         const buttonContactMe = document.querySelector('.photographer-page_contact_button')
         const spanCross = document.getElementsByClassName('close-form-icon')[0]
         const firstname = document.getElementById('firstname')
