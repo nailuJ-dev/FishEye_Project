@@ -31,20 +31,20 @@
   
 .photographer-page_header_content_title {
     color: #d3573c;
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 50px;
     margin: 0;
 }
   
 .photographer-page_header_content_localization {
     color: #911c1c;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    margin: 0.5rem 0rem;
+    margin: 6px 0;
 }
   
 .photographer-page_header_content_tagline {
-    font-size: 18px;
+    font-size: 15px;
     margin: 0;
     color: #525252;
 }
