@@ -3,6 +3,7 @@ import FishEyeApi from './fisheyeapi.js';
 import ShowPhotographers from './builders/photographerPageBuilder.js';
 import GalleryLightbox from './utils/galleryLightbox.js';
 import { PhotographyContent, VideoContent } from './builders/mediaContent.js';
+import modalCreationAndOpening from './utils/modal.js';
 
 const elementContentGallery = document.querySelector('.photographer-page_gallery');
 
@@ -59,6 +60,7 @@ async function showPhotographerDatas() {
     const photographerFooter = document.querySelector('.photographer-page_footer-section');
     photographerHeader.innerHTML += showPhotographer.profileHeader();
     photographerFooter.innerHTML += showPhotographer.profileFooter();
+    modalCreationAndOpening()
 };
 
 function getLikesStatus() {
