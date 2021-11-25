@@ -43,7 +43,7 @@ export default class ShowPhotographers {
         return `
         <section class="photographer-page_footer">
             <aside class="photographer-page_footer_aside">
-            <p class="photographer-page_footer_aside_total-likes" aria-label="Nombre total de likes ${this._totalLikes}">${this._totalLikes}</p>
+            <p class="photographer-page_footer_aside_total-likes" aria-label="Nombre total de likes ${this.userLikesReload}">${this.userLikesReload}</p>
             <i class="fas fa-heart" aria-hidden="true"></i>
             </aside>
             <p class="photographer-page_footer_price" aria-label="Tarif du photographe ${this._price} euros par jour">${this._price}€/jour</p>
@@ -51,7 +51,7 @@ export default class ShowPhotographers {
         `
     };
 
-    userLikesReload() {
+    get userLikesReload() {
         let totalLikesEl = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');
         let sumOfLikes = 0
         totalLikesEl.forEach(function (like) {

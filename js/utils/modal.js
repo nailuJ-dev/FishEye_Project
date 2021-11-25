@@ -3,7 +3,7 @@
 // DOM Elements
 const modalBg = document.querySelector('.dialog-contact-form')
 const modal = document.querySelectorAll('.photographer-page_contact_button')
-const spanCross = document.getElementsByClassName('close-form-icon')[0]
+const spanCross = document.querySelectorAll('.close-form-icon')[0]
 
 modal.forEach((btn) => btn.addEventListener('click', function (openModal) {
     modalBg.style.display = 'block';

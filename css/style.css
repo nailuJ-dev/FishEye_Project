@@ -42,3 +42,7 @@ ul li {
 ul li a {
     text-decoration: none;
 }
+
+.dialog-contact-form {
+    display: none;
+}
