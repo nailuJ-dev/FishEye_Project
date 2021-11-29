@@ -294,3 +294,14 @@ select {
 .close-form-icon {
     font-size: 40px;
 }
+
+.formData {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.formLabel {
+    font-size: 30px;
+    font-weight: 400;
+}
