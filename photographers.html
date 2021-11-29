@@ -12,7 +12,6 @@
         <script type="module" src="./js/builders/mediaContent.js"></script>
         <script type="module" src="./js/builders/photographerpageBuilder.js"></script>
       <!-- <script type="module" src="./js/photographer-page/form.js"></script> --> 
-        <script type="module" src="./js/photographer-page/likeseval.js"></script>
         <script type="module" src="./js/utils/galleryLightbox.js"></script>
         <script type="module" src="./js/utils/modal.js"></script>
         <script type="module" src="./js/fisheyeapi.js"></script>
@@ -43,14 +42,14 @@
 
         <!-- MODAL / FORM CONTACT ME -->
         <div role="dialog" class="dialog-contact-form" id="dialog-contact-form" aria-label="contact me form" aria-labelledby="form-title">
-            <form action="photographers.html" method="post" id="contact-form">
+            <form action="photographers.html" method="post" class="form-content" id="contact-form">
                 <header>
                     <h1>
                         <span>Contactez-moi</span>
-                        <span id="photographer-name-for-form"></span>
+                        <div id="photographer-name-for-form"></div>
                     </h1>
                     <button id="button-close" title="Close form" type="button">
-                        <span class="fas fa-times close-form-icon" aria-hidden="true"></span>
+                        <span class="close-form-icon" aria-hidden="true">X</span>
                     </button>
                 </header>
 

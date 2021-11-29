@@ -37,9 +37,9 @@ export default class ShowPhotographers {
              <img src="${this._picture}" class="photographer-page_header_photo" alt="Photographie de profil de ${this._name}">
          </div> 
          `
-     };
+    };
 
-     profileFooter () {
+    profileFooter () {
         return `
         <section class="photographer-page_footer">
             <aside class="photographer-page_footer_aside">
@@ -50,6 +50,12 @@ export default class ShowPhotographers {
         </section>
         `
     };
+
+    profileContact () {
+        return `
+        ${this._name}
+        `
+    }
 
     get userLikesReload() {
         let totalLikesEl = document.querySelectorAll('.photographer-page_gallery_media_footer_like-section-counter');

@@ -251,3 +251,46 @@ select {
     -ms-transition: opacity 0.3s;
     -o-transition: opacity 0.3s;
 }
+
+.dialog-contact-form {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background-color: rgba(255, 253, 253, 0.9);
+    padding: 24px 24px;
+}
+
+.form-content {
+    background-color: #db8876;
+    border: 1px solid #888;
+    margin: auto;
+    padding: 0 25px 120px 25px;
+    width: 80%;
+}
+
+.form-content header {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-content h1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 100px;
+    width: 150px;
+}
+
+.close-form-icon {
+    font-size: 40px;
+}

@@ -4,36 +4,6 @@ import FishEyeApi from './fisheyeapi.js';
 // IMPORT PAGEBUILDER
 import PageBuilder from './builders/homepageBuilder.js';
 
-// IMPORT PHOTOGRAPHERS' PAGES ELEMENTS
-//import ProfilePhotographers from './photographer-page/profileCardPhotographer.js'
-//import DropMenu from './photographer-page/dropmenu.js';
-
-// DISPATCH DATAS
-/*(async () => {
-    const api = new FishEyeApi();
-     await api.grabDatasApi().then((datas) => {
-        if (window.location.pathname.includes('./photographers.html')) {
-            const profile = new ProfilePhotographers()
-            const downMenu = new DropMenu()
-            const buildMedias = new BuilderMediaPhoto()
-            profile.showProfilePhotographers(datas);
-            downMenu.dropDownMenu(datas);
-            buildMedias.photoMedia(datas);
-        }
-        new PageBuilder().showPhotographers(datas);
-    }).catch(() => {
-        console.error('Failure in loading FishEyeApi datas');
-    });
-})(); */
-
-/* const filterByTag = async (tag, photographers) => {
-    if (tag in photographers.tags) {
-        return photographers.filter((photographer) => photographer.tags.includes(tag));
-    } else {
-        return photographers;
-    };
-};*/
-
 (async () => {
     const api = new FishEyeApi();
     await api.grabDatasApi().then((data) => {

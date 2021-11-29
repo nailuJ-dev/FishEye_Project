@@ -61,6 +61,8 @@ async function showPhotographerDatas() {
     photographerHeader.innerHTML += showPhotographer.profileHeader();
     photographerFooter.innerHTML += showPhotographer.profileFooter();
     modalCreationAndOpening()
+    const photographerName = document.getElementById('photographer-name-for-form');
+    photographerName.innerHTML += showPhotographer.profileContact();
 };
 
 function getLikesStatus() {
