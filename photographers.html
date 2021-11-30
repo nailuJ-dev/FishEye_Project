@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FishEye - Profil d'un photographe</title>
@@ -11,7 +11,7 @@
         <script type="module" src="./js/photographerPages.js"></script>
         <script type="module" src="./js/builders/mediaContent.js"></script>
         <script type="module" src="./js/builders/photographerpageBuilder.js"></script>
-      <!-- <script type="module" src="./js/photographer-page/form.js"></script> --> 
+        <script type="module" src="./js/photographer-page/form.js"></script>
         <script type="module" src="./js/utils/galleryLightbox.js"></script>
         <script type="module" src="./js/utils/modal.js"></script>
         <script type="module" src="./js/fisheyeapi.js"></script>
@@ -48,37 +48,43 @@
                         <span>Contactez-moi</span>
                         <div id="photographer-name-for-form"></div>
                     </h1>
-                    <button id="button-close" title="Close form" type="button">
+                    <button id="button-close" title="Close form" type="button" aria-labelledby="Close Contact form">
                         <span class="close-form-icon" aria-hidden="true">X</span>
                     </button>
                 </header>
 
                 <!-- FIRSTNAME -->
-                <div class="formData" data-error="Veuillez renseigner votre prénom." data-error-visible="false">
+                <div class="formData">
                     <label class="formLabel" for="firstname" id="firstname-field-label">Prénom</label>
-                    <input name="firstname" id="firstname" aria-labelledby="firstname-label" placeholder="Prénom">
+                    <div class="firstnameError error-message-text hidden">Veuillez renseigner correctement votre prénom.</div>
+                    <input class="formInput" name="firstname" id="firstname" aria-labelledby="firstname-label">
                 </div>
 
                 <!-- LASTNAME -->
-                <div class="formData" data-error="Veuillez renseigner votre nom." data-error-visible="false">
+                <div class="formData">
                     <label class="formLabel" for="lastname" id="lastname-field-label">Nom</label>
-                    <input name="lastname" id="lastname" aria-labelledby="lastname-label" placeholder="Nom">
+                    <div class="lastnameError error-message-text hidden">Veuillez renseigner correctement votre nom.</div>
+                    <input class="formInput" name="lastname" id="lastname" aria-labelledby="lastname-label">
                 </div>
 
                 <!-- EMAIL -->
-                <div class="formData" data-error="Veuillez renseigner un email valide." data-error-visible="false">
-                    <label class="formLabel" for="email" id="email-field-label">E-mail</label>
-                    <input type="email" name="email" id="email" aria-labelledby="email-label" placeholder="votre-adresse@email.com">
+                <div class="formData">
+                    <label class="formLabel" for="email" id="email-field-label">Email</label>
+                    <div class="emailError error-message-text hidden">Veuillez renseigner correctement votre email.</div>
+                    <input class="formInput" name="email" id="email" aria-labelledby="email-label">
                 </div>
 
                 <!-- MESSAGE -->
-                <div class="formData" data-error="Veuillez rédiger un message en lien avec votre demande." data-error-visible="false">
+                <div class="formData">
                     <label class="formLabel" for="message" id="message-field-label">Votre message</label>
-                    <textarea name="message" id="message" cols="22" rows="6" aria-labelledby="message-label" placeholder="Rédigez ici votre message ..."></textarea>
+                    <div class="messageError error-message-text hidden">Veuillez rédiger un message en lien avec votre demande.</div>
+                    <textarea class="formMessage" name="message" id="message" cols="22" rows="6" aria-labelledby="message-label"></textarea>
                 </div>
 
                 <!-- SUBMIT BUTTON -->
-                <input type="submit" value="Envoyer" class="submit-button-form" id="submit-button-form" title="Send">
+                <div class="submit-button">
+                    <input type="submit" value="Envoyer" class="submit-button-form" id="submit-button-form" title="Send" aria-labelledby="Send">
+                </div>
             </form>
         </div>
         <footer class="photographer-page_footer-section"></footer>

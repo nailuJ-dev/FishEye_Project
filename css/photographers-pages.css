@@ -287,8 +287,8 @@ select {
     border: none;
     color: #fff;
     cursor: pointer;
-    height: 100px;
-    width: 150px;
+    font-weight: 400;
+    margin-right: 40px;
 }
 
 .close-form-icon {
@@ -298,10 +298,78 @@ select {
 .formData {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .formLabel {
     font-size: 30px;
     font-weight: 400;
+}
+
+.formInput {
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.formInput:focus {
+    outline: 2px solid black;
+}
+
+.error-message-text {
+    font-size: 15px;
+    color: #911c1c;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.formMessage {
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    height: 184px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.formMessage:focus {
+    outline: 2px solid black;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.submit-button-form {
+    background-color: #911c1c;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    height: 50px;
+    width: 120px;
+}
+
+.submit-button-form:hover, .submit-button-form:focus {
+    cursor: pointer;
 }

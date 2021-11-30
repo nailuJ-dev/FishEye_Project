@@ -4,6 +4,7 @@ import ShowPhotographers from './builders/photographerPageBuilder.js';
 import GalleryLightbox from './utils/galleryLightbox.js';
 import { PhotographyContent, VideoContent } from './builders/mediaContent.js';
 import modalCreationAndOpening from './utils/modal.js';
+import formFields from './utils/form.js';
 
 const elementContentGallery = document.querySelector('.photographer-page_gallery');
 
@@ -63,6 +64,7 @@ async function showPhotographerDatas() {
     modalCreationAndOpening()
     const photographerName = document.getElementById('photographer-name-for-form');
     photographerName.innerHTML += showPhotographer.profileContact();
+    formFields()
 };
 
 function getLikesStatus() {
