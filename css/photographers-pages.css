@@ -260,14 +260,23 @@ select {
     top: 0;
     background-color: rgba(255, 253, 253, 0.9);
     padding: 24px 24px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .form-content {
     background-color: #db8876;
-    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #888;
     margin: auto;
     padding: 0 25px 120px 25px;
     width: 80%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .form-content header {
@@ -372,4 +381,47 @@ select {
 
 .submit-button-form:hover, .submit-button-form:focus {
     cursor: pointer;
+}
+
+@media screen and (max-width: 990px) {
+    .dialog-contact-form {
+        left: 0;
+        overflow: auto;
+        padding: 0;
+    }
+
+    .form-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-content header {
+        font-size: 15px;
+    }
+
+    .form-content button {
+        margin-right: 5px;
+    }
+
+    .close-form-icon {
+        font-size: 30px;
+    }
+
+    .formLabel {
+        font-size: 15px;
+    }
+
+    .formInput {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        justify-content: center;
+    }
+
+    .submit-button-form {
+        height: 40px;
+        width: 130px;
+    }
 }
