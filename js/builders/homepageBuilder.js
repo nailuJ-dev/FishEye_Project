@@ -1,4 +1,4 @@
-import ScrollButton from './scrollButton.js';
+import scrollBtn from './scrollButton.js';
 import FishEyeApi from '../fisheyeapi.js';
 
 
@@ -26,6 +26,6 @@ export default class PageBuilder {
             return (
                 photographersArticle.innerHTML = modelPhotographerCard);
             });
-        new ScrollButton().scrollBtn();
+        scrollBtn();
     };
 };

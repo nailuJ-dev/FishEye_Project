@@ -13,11 +13,6 @@ body { /* SET THESE WITH FINAL STATEMENTS DONE */
     margin-right: 24px;
 }
 
-nav ul li:hover, li.actived {
-    background-color: #901C1C;
-    color: #fff
-}
-
 ul li {
     border: .5px solid #C4C4C4;
     border-radius: 11px;

@@ -35,6 +35,11 @@ header nav ul {
     text-decoration: none;
 }
 
+header nav ul li:hover, li.actived {
+    background-color: #901C1C;
+    color: #fff
+}
+
 /* CSS QUERIES */
 @media screen and (max-width: 592px) {
     .filters_navlist {

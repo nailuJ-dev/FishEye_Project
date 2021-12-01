@@ -2,7 +2,8 @@
 
 export default function formFields () {
         // DOM Elements
-        const modal = document.getElementById('dialog-contact-form')
+        const modalBgd = document.querySelector('.dialog-contact-form')
+        const formElem = document.getElementById('contact-form')
 
         // function to check string length
         function checkString (input, error, extra) {
@@ -44,7 +45,7 @@ export default function formFields () {
         };
 
         // Events for submiting the form
-        modal.addEventListener('submit', function (event) {
+        modalBgd.addEventListener('submit', function (event) {
             event.preventDefault();
             const inputObject = [
                 { input: document.getElementById('firstname').value, error: document.querySelector('.firstnameError'), functionTest: checkString, extra: 2 },
@@ -61,8 +62,8 @@ export default function formFields () {
                     functionCount++;
                     if (functionCount === inputObject.length) {
                         formValidConsoleLog(firstname, lastname, email, message);
-                        modal.reset();
-                        modal.style.display = 'none';
+                        formElem.reset();
+                        modalBgd.style.display = 'none';
                     };
                 };
             });
