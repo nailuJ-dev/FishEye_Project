@@ -11,7 +11,7 @@ header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    margin-top: 24px; /* CHECK THIS */
+    margin: 24px 40px 0 40px;
     overflow: hidden;
 }
 
@@ -36,3 +36,23 @@ header nav ul {
 }
 
 /* CSS QUERIES */
+@media screen and (max-width: 592px) {
+    .filters_navlist {
+        max-width: 350px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    header {
+        margin-bottom: 15px;
+    }
+
+    header img {
+        width: 140px;
+    }
+
+    header h1 {
+        font-size: 15px;
+        font-weight: 300;
+    }
+}

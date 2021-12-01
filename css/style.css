@@ -46,3 +46,11 @@ ul li a {
 .dialog-contact-form {
     display: none;
 }
+
+/* Media queries */
+
+@media screen and (max-width: 990px) {
+    body {
+        margin: 0;
+    }
+}

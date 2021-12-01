@@ -64,3 +64,48 @@ section img:hover {
 }
 
 /* CSS QUERIES */
+@media screen and (max-width: 870px) {
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photographerArticle {
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 40px;
+    }
+
+    .filter-tagline {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .photographerArticle {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 592px) {
+    .filter-name {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .filter-tagline {
+        font-size: 12px;
+    }
+
+    .filter-price {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+}
