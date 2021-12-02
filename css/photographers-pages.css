@@ -82,6 +82,11 @@
 .photographer-page_gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 46px;
+}
+
+.photographer-page_gallery_card {
+    margin: 16px 0;
 }
   
 .photographer-page_gallery_media {
@@ -141,7 +146,6 @@
     height: 80px;
     left: 50%;
     margin-left: -150px;
-    position: auto;
     width: 300px;
 }
 
@@ -165,6 +169,8 @@ select {
     display: flex;
     background-color: #db8876;
     align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     height: 70px;
     width: 275px;
     justify-content: space-between;
