@@ -1,4 +1,3 @@
-// check with css done and maybe replace data-error-visible by project 4 error message with span in html form
 
 export default function formFields () {
         // DOM Elements

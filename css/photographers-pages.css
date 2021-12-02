@@ -191,7 +191,7 @@ select {
     z-index: 10;
     left: 0;
     top: 0;
-    background-color: rgba(255, 253, 253, 0.9);
+    background-color: rgba(255, 253, 253, 0.96);
 }
 
 .lightbox_container {
@@ -210,6 +210,11 @@ select {
     width: 1000px;
     height: 800px;
     object-fit: cover;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .lightbox_next, .lightbox_previous {
@@ -397,12 +402,15 @@ select {
         left: 0;
         overflow: auto;
         padding: 0;
+        margin: auto;
     }
 
     .form-content {
-        margin: 0;
-        width: 100%;
-        height: 100%;
+        margin: auto;
+        margin-top: 40px;
+        padding: 10px;
+        width: 80%;
+        height: 80%;
     }
 
     .form-content header {
@@ -462,6 +470,11 @@ select {
     .logo-page {
         padding-left: 40px;
     }
+
+    .lightbox_container img {
+        width: 80%;
+        height: 600px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -473,6 +486,10 @@ select {
     .photographer-page_header_photo {
         height: 150px;
         width: 150px;
+    }
+
+    .lightbox_container img {
+        height: 450px;
     }
 }
 
@@ -505,6 +522,60 @@ select {
         font-size: 13px;
         margin: 2px 2px 0 0;
     }
+
+    .form-content {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-content header {
+        padding: 10px 20px;
+    }
+
+    .formData {
+        padding: 0 20px;
+    }
+
+    .form-content header h1 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+
+    .close-form-icon {
+        font-size: 35px;
+        font-weight: 200;
+    }
+
+    .lightbox_container img {
+        height: 300px;
+    }
+
+    .lightbox_container p {
+        position: fixed;
+        top: 67%;
+        left: 18%;
+    }
+
+    .lightbox_close {
+        width: 20px;
+        right: 10%;
+        top: 32%;
+    }
+
+    .lightbox_next {
+        width: 15px;
+        right: 10%;
+        top: 3%;
+    }
+
+    .lightbox_previous {
+        width: 15px;
+        left: 10%;
+        top: 3%;
+    }
 }
 
 @media screen and (max-width: 490px) {
@@ -519,6 +590,16 @@ select {
 
     .photographer-page_gallery_card {
         margin: 10px 0;
+    }
+
+    .lightbox_container p {
+        top: 68%;
+        left: 19%;
+    }
+
+    .lightbox_close {
+        top: 31%;
+        right: 12%;
     }
 }
 
@@ -547,5 +628,10 @@ select {
         height: 110px;
         width: 110px;
         flex-shrink: 0;
+    }
+
+    .lightbox_container p {
+        top: 67%;
+        left: 20%;
     }
 }

@@ -1,46 +1,10 @@
-/* export default class MediaContentBuilder {
-    constructor (data) {
-        try {
-            if (data.type === 'image') {
-                return new PhotographyContent(data);
-            } else if (data.type === 'video') {
-                return new VideoContent(data);
-            } else {
-                const err = Error('Content is unknown')
-                throw err
-            }} catch (err) {
-                return err
-            }
-        }
-    };
-}; */
-
-/* class MediaContentFactory {
-    constructor (datas) {
-        this._dataContent = null;
-        this._srcContent = datas.image || datas.video;
-        this._likesImage = datas.likes;
-        this._titleImage = datas.title;
-        this._photographerIdImage = datas.photographerId;
-
-    if (datas.image) {
-            this._dataContent = this._srcContent
-            return createImageContent();
-        } else if (datas.video) {
-            this._dataContent = this._srcContent
-            return createVideoContent();
-        } else {
-            return wrongContent();
-        };
-}; */
-
+// Build the media content for the photographer pages
 export class PhotographyContent {
     constructor (datas) {
         this._srcImage = datas.image;
         this._likesImage = datas.likes;
         this._titleImage = datas.title;
         this._photographerIdImage = datas.photographerId;
-        // adding of a feature content must be checked with this._altImage = datas.description;
     }
 
     createHtmlContent () {
@@ -65,7 +29,6 @@ export class VideoContent {
         this._likesVideo = datas.likes;
         this._titleVideo = datas.title;
         this._photographerIdVideo = datas.photographerId;
-        // adding of a feature content must be checked with this._altVideo = datas.description;
     }
 
     createHtmlContent () {

@@ -31,9 +31,7 @@ export default class GalleryLightbox {
 	};
 
 	formatSrcContentLightbox(src) {
-		let lightboxContentLink = src //.split('/');
-		//lightboxContentLink.splice(4, 0, 'lightbox');
-		//const formatedLightboxContentLink = lightboxContentLink.join('/');
+		let lightboxContentLink = src
 		return lightboxContentLink;
 	};
 
@@ -112,10 +110,10 @@ export default class GalleryLightbox {
 		const htmlDom = document.createElement('div');
 		htmlDom.classList.add('lightbox');
 		htmlDom.innerHTML = `
-    <button class="lightbox_close" aria-label="Close content window">Fermer</button>
+    <button class="lightbox_close" aria-label="Close dialog">Fermer</button>
     <button class="lightbox_next" aria-label="Next media">Suivant</button>
     <button class="lightbox_previous" aria-label="Previous media">Précédent</button>
-    <div class="lightbox_container" role="dialog" aria-label="">
+    <div class="lightbox_container" role="dialog" aria-label="image closeup view">
     <p class="lightbox_container_img-title"></p>
     </div>`;
         htmlDom.querySelector('.lightbox_close').addEventListener('click', this.close.bind(this));
