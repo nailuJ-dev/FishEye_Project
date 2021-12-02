@@ -53,7 +53,8 @@ export default class ShowPhotographers {
 
     profileContact () {
         return `
-        ${this._name}
+        <span aria-label='Contact me ${this._name}' aria-labelledby='photographer-name'>Contactez-moi</span>
+        <a id='photographer-name'>${this._name}</a>
         `
     }
 

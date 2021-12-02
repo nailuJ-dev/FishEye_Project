@@ -41,14 +41,12 @@
         </main>
 
         <!-- MODAL / FORM CONTACT ME -->
-        <div role="dialog" class="dialog-contact-form" id="dialog-contact-form" aria-label="contact me form" aria-labelledby="form-title">
+        <div role="dialog" class="dialog-contact-form" id="dialog-contact-form" aria-label="contact me form" aria-labelledby="photographer-name-for-form">
             <form action="photographers.html" method="post" class="form-content" id="contact-form">
                 <header>
-                    <h1>
-                        <span>Contactez-moi</span>
-                        <div id="photographer-name-for-form"></div>
+                    <h1 id="photographer-name-for-form">
                     </h1>
-                    <button id="button-close" title="Close form" type="button" aria-labelledby="Close Contact form">
+                    <button id="button-close" title="Close form" type="button" aria-label="Close Contact form">
                         <span class="close-form-icon" aria-hidden="true">X</span>
                     </button>
                 </header>
@@ -57,33 +55,33 @@
                 <div class="formData">
                     <label class="formLabel" for="firstname" id="firstname-field-label">Prénom</label>
                     <div class="firstnameError error-message-text hidden">Veuillez renseigner correctement votre prénom.</div>
-                    <input class="formInput" name="firstname" id="firstname" aria-labelledby="firstname-label">
+                    <input class="formInput" name="firstname" id="firstname" aria-labelledby="firstname-field-label">
                 </div>
 
                 <!-- LASTNAME -->
                 <div class="formData">
                     <label class="formLabel" for="lastname" id="lastname-field-label">Nom</label>
                     <div class="lastnameError error-message-text hidden">Veuillez renseigner correctement votre nom.</div>
-                    <input class="formInput" name="lastname" id="lastname" aria-labelledby="lastname-label">
+                    <input class="formInput" name="lastname" id="lastname" aria-labelledby="lastname-field-label">
                 </div>
 
                 <!-- EMAIL -->
                 <div class="formData">
                     <label class="formLabel" for="email" id="email-field-label">Email</label>
                     <div class="emailError error-message-text hidden">Veuillez renseigner correctement votre email.</div>
-                    <input class="formInput" name="email" id="email" aria-labelledby="email-label">
+                    <input class="formInput" name="email" id="email" aria-labelledby="email-field-label">
                 </div>
 
                 <!-- MESSAGE -->
                 <div class="formData">
                     <label class="formLabel" for="message" id="message-field-label">Votre message</label>
                     <div class="messageError error-message-text hidden">Veuillez rédiger un message en lien avec votre demande.</div>
-                    <textarea class="formMessage" name="message" id="message" cols="22" rows="6" aria-labelledby="message-label"></textarea>
+                    <textarea class="formMessage" name="message" id="message" cols="22" rows="6" aria-label="message-label"></textarea>
                 </div>
 
                 <!-- SUBMIT BUTTON -->
                 <div class="submit-button">
-                    <input type="submit" value="Envoyer" class="submit-button-form" id="submit-button-form" title="Send" aria-labelledby="Send">
+                    <input type="submit" value="Envoyer" class="submit-button-form" id="submit-button-form" title="Send" aria-label="Send">
                 </div>
             </form>
         </div>

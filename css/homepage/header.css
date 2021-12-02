@@ -37,7 +37,8 @@ header nav ul {
 
 header nav ul li:hover, li.actived {
     background-color: #901C1C;
-    color: #fff
+    color: #fff;
+    cursor: pointer;
 }
 
 /* CSS QUERIES */
