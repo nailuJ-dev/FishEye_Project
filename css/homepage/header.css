@@ -49,6 +49,10 @@ header nav ul li:hover, li.actived {
         margin-bottom: 20px;
     }
 
+    header nav ul li {
+        margin-bottom: 3px;
+    }
+
     header {
         margin-bottom: 15px;
     }
