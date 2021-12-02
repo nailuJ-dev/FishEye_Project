@@ -477,7 +477,7 @@ select {
         padding-left: 40px;
     }
 
-    .lightbox_container img {
+    .lightbox_container img, video {
         width: 80%;
         height: 600px;
     }
@@ -494,7 +494,7 @@ select {
         width: 150px;
     }
 
-    .lightbox_container img {
+    .lightbox_container img, video {
         height: 450px;
     }
 }
@@ -555,7 +555,7 @@ select {
         font-weight: 200;
     }
 
-    .lightbox_container img {
+    .lightbox_container img, video {
         height: 300px;
     }
 
