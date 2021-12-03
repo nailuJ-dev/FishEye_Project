@@ -31,7 +31,7 @@
   
 .photographer-page_header_content_title {
     color: #d3573c;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 50px;
     margin: 0;
 }
@@ -55,7 +55,6 @@
     flex-direction: row;
     padding: 0;
     margin: 10px 0;
-    padding-left: 40px;
 }
   
 .photographer-page_header_content_tags {
@@ -145,8 +144,8 @@
     font-size: 23.44px;
     height: 80px;
     left: 50%;
-    margin-left: -150px;
-    width: 300px;
+    margin-left: -90px;
+    width: 240px;
 }
 
 select {
@@ -208,12 +207,12 @@ select {
     text-align: center;
     margin: 0 50px;
     padding: 0;
-    min-height: 100vh;
+    min-height: 100%;
     color: #911c1c;
 }
 
 .lightbox_container img, video {
-    width: 1000px;
+    width: 90%;
     height: 800px;
     object-fit: cover;
     border-radius: 5px;
@@ -221,6 +220,14 @@ select {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+}
+
+.lightbox_container div {
+    font-size: 20px;
+    margin-top: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .lightbox_next, .lightbox_previous {
@@ -280,19 +287,22 @@ select {
     top: 0;
     background-color: rgba(255, 253, 253, 0.9);
     padding: 24px 24px;
+    border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    overflow: auto;
 }
 
 .form-content {
     background-color: #db8876;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px #888;
-    margin: auto;
+    box-shadow: 0px 2px 8px 0px #888;
+    margin: 40px auto;
     padding: 0 25px 120px 25px;
     width: 80%;
+    height: 750px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -364,13 +374,15 @@ select {
 .formMessage {
     display: flex;
     border: none;
+    resize: none;
+    overflow: auto;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     height: 184px;
-    width: 100%;
+    width: 99%;
     font-size: 20px;
 }
 
@@ -412,11 +424,9 @@ select {
     }
 
     .form-content {
-        margin: auto;
-        margin-top: 40px;
+        margin: 40px auto;
         padding: 10px;
         width: 80%;
-        height: 80%;
     }
 
     .form-content header {
@@ -481,6 +491,15 @@ select {
         width: 80%;
         height: 600px;
     }
+
+    .lightbox_container div {
+        width: 80%;
+    }
+
+    .photographer-page_gallery {
+        margin-right: 40px;
+        margin-left: 40px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -534,7 +553,7 @@ select {
         padding: 0;
         margin: 0;
         width: 100%;
-        height: 100%;
+        height: 1000px;
     }
 
     .form-content header {
@@ -559,28 +578,26 @@ select {
         height: 300px;
     }
 
-    .lightbox_container p {
-        position: fixed;
-        top: 67%;
-        left: 18%;
+    .lightbox_container div {
+        font-size: 18px;
     }
 
     .lightbox_close {
         width: 20px;
-        right: 10%;
-        top: 32%;
+        right: 12%;
+        top: 29vh;
     }
 
     .lightbox_next {
         width: 15px;
         right: 10%;
-        top: 3%;
+        align-items: center;
     }
 
     .lightbox_previous {
         width: 15px;
         left: 10%;
-        top: 3%;
+        align-items: center;
     }
 }
 
@@ -598,13 +615,8 @@ select {
         margin: 10px 0;
     }
 
-    .lightbox_container p {
-        top: 68%;
-        left: 19%;
-    }
-
     .lightbox_close {
-        top: 31%;
+        top: 29vh;
         right: 12%;
     }
 }
@@ -631,13 +643,16 @@ select {
     }
 
     .photographer-page_header_photo {
-        height: 110px;
-        width: 110px;
+        height: 80px;
+        width: 80px;
         flex-shrink: 0;
     }
 
-    .lightbox_container p {
-        top: 67%;
-        left: 20%;
+    .photographer-page_header_content_taglist li {
+        font-size: 10px;
+    }
+
+    .lightbox_container div {
+        font-size: 15px;
     }
 }

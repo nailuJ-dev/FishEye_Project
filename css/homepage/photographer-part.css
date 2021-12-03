@@ -41,7 +41,7 @@ section article {
     flex: 1 1 33.333333333%
 }
 section img {
-    background-color: #59CE26;
+    background-color: transparent;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;

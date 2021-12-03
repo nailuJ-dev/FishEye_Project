@@ -47,11 +47,13 @@ export default class GalleryLightbox {
 			wrapper.appendChild(video);
 			wrapper.appendChild(desc);
 			video.setAttribute('controls', '');
+            video.setAttribute('id', 'lightbox_container_vid')
+            video.setAttribute('onloadedmetadata', 'this.paused = true; this.currentTime = 1')
 			video.src = url;
 		} else if (url.endsWith('.jpg')) {
 			const image = new Image();
 			const wrapper = this.element.querySelector('.lightbox_container');
-			const desc = document.createElement('p');
+			const desc = document.createElement('div');
 			desc.innerHTML += this.getFormatTitle(url);
 			wrapper.innerHTML = "";
 			wrapper.appendChild(image);
@@ -72,11 +74,13 @@ export default class GalleryLightbox {
     onKeyup (el) {
 		if (el.key === 'Escape') {
 			this.close(el);
-		} else if (el.key === 'ArrowLeft') {
-			this.next(el);
 		} else if (el.key === 'ArrowRight') {
+			this.next(el);
+		} else if (el.key === 'ArrowLeft') {
 			this.previous(el);
-		};
+        } else if (el.key === ' ') {
+            this.playPause(el);
+        };
 	};
 
     close(el) {
@@ -105,6 +109,16 @@ export default class GalleryLightbox {
 		}
 		this.loadContent(this.gallery[i - 1]);
 	};
+
+    playPause(el) {
+        el.preventDefault();
+        let videos = document.getElementById('lightbox_container_vid');
+        if (videos.paused == true) {
+            videos.play();
+        } else {
+            videos.pause();
+        };
+    };
 
     buildHtmlDom() {
 		const htmlDom = document.createElement('div');

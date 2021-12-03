@@ -10,7 +10,7 @@ export class PhotographyContent {
     createHtmlContent () {
         return `
         <figure class="photographer-page_gallery_card" aria-label="${this._titleImage} upper closing view">
-            <img class="photographer-page_gallery_media focus_element-secondary" loading="lazy" src="./media/${this._photographerIdImage}/${this._srcImage}" alt="${this._altImage}"/>
+            <img class="photographer-page_gallery_media focus_element-secondary" loading="lazy" tabindex="0" src="./media/${this._photographerIdImage}/${this._srcImage}" alt="${this._altImage}"/>
             <footer class="photographer-page_gallery_media_footer">
                 <figcaption class="photographer-page_gallery_media_footer_figcaption">${this._titleImage}</figcaption>
                 <div class="photographer-page_gallery_media_footer_like-section">
@@ -34,8 +34,8 @@ export class VideoContent {
     createHtmlContent () {
         return `
         <figure class="photographer-page_gallery_card">
-            <video controls class="photographer-page_gallery_media focus_element-secondary">
-                <source src="./media/${this._photographerIdVideo}/${this._srcVideo}" alt="${this._altVideo}"/>
+            <video controls class="photographer-page_gallery_media focus_element-secondary" id="photographer-page_gallery_video"">
+                <source src="./media/${this._photographerIdVideo}/${this._srcVideo}" tabindex="0" alt="${this._altVideo}"/>
             </video>
             <footer class="photographer-page_gallery_media_footer">
                 <figcaption class="photographer-page_gallery_media_footer_figcaption">${this._titleVideo}</figcaption>

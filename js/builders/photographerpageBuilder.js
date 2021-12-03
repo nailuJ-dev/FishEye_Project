@@ -30,12 +30,12 @@ export default class ShowPhotographers {
                  <h1 class="photographer-page_header_content_title">${this._name}</h1>
                  <p class="photographer-page_header_content_localization">${this._city}, ${this._country}</p>
                  <p class="photographer-page_header_content_tagline">${this._tagline}</p>
+                 <ul class="photographer-page_header_content_taglist">${this._tags.map(tag => `<li href="../index.html" class="photographer-page_header_content_tags">#${tag}</li>`).join(" ")}</ul>
              </div>
              <button class="photographer-page_contact_button focus_element-secondary" id="contact-me-button" aria-label="Contacter le photographe ${this._name}">Contactez-moi
              </button>
              <img src="${this._picture}" class="photographer-page_header_photo" alt="Photographie de profil de ${this._name}">
-         </div>
-         <ul class="photographer-page_header_content_taglist">${this._tags.map(tag => `<li href="../index.html" class="photographer-page_header_content_tags">#${tag}</li>`).join(" ")}</ul>
+         </div>      
          `
     };
 

@@ -13,7 +13,7 @@ export default class PageBuilder {
             photographersArticle.className = photograph.tags.join(' ') + ' photographerArticle';
             let modelPhotographerCard = `
             <a href="photographers.html?id=${photograph.id}" title="${photograph.name}">
-                <img src="${photograph.portrait}" alt="${photograph.alt}">
+                <img src="${photograph.portrait}" alt="${photograph.alt}" class="photographer_portrait">
                 <h2 class="filter-name">${photograph.name}</h2>
             </a>
             <p class="filter-location">${photograph.city}, ${photograph.country}</p>

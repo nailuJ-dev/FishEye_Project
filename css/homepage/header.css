@@ -17,6 +17,7 @@ header {
 
 header img {
     width: 105px;
+    background: #fff;
 }
 
 header nav ul {
@@ -35,7 +36,7 @@ header nav ul {
     text-decoration: none;
 }
 
-header nav ul li:hover, li.actived {
+header nav ul li:hover, li.actived, li:focus {
     background-color: #901C1C;
     color: #fff;
     cursor: pointer;

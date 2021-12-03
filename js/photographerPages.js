@@ -9,11 +9,11 @@ import formFields from './utils/form.js';
 const elementContentGallery = document.querySelector('.photographer-page_gallery');
 
 // Filter content of media gallery with selected parameters
-const filterByCriterias = (contentMedia, filter) => {
+function filterByCriterias(contentMedia, filter) {
     switch (filter) {
 	    case 'popularity':
 	    return contentMedia.sort((a, b) => {
-		    return b.likes - a.likes;
+            return b.likes - a.likes;
 	    });
 	    case 'date':
 	        return contentMedia.sort((a, b) => {
@@ -54,6 +54,7 @@ async function showPhotographerDatas() {
 	    elementContentGallery.innerHTML = '';
 	    const filter = filterByCriterias(contentMedia, event.target.value);
 	    updateContentMedia(filter);
+        getLikesStatus()
 	    GalleryLightbox.init();
     });
 
