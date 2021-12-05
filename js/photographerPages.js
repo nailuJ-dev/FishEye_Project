@@ -1,6 +1,6 @@
 // import ScrollButton from './builders/scrollButton.js';
 import FishEyeApi from './fisheyeapi.js';
-import ShowPhotographers from './builders/photographerPageBuilder.js';
+import ShowPhotographers from './builders/photographerpageBuilder.js';
 import GalleryLightbox from './utils/galleryLightbox.js';
 import { PhotographyContent, VideoContent } from './builders/mediaContent.js';
 import modalCreationAndOpening from './utils/modal.js';
