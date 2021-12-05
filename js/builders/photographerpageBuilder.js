@@ -12,7 +12,7 @@ export default class ShowPhotographers {
     };
 
     get picture () {
-        return `./media/Portraits/${this._picture}`
+        return `../media/Portraits/${this._picture}`
     };
 
     get location () {
