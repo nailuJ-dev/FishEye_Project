@@ -34,8 +34,8 @@ export default class ShowPhotographers {
             </div>
             <button class="photographer-page_contact_button focus_element-secondary" id="contact-me-button" aria-label="Contacter le photographe ${this._name}">Contactez-moi</button>
             <img src="${this._picture}" class="photographer-page_header_photo" alt="Photographie de profil de ${this._name}">
-         </div>      
-         `
+        </div>      
+        `
     };
 
     profileFooter () {
