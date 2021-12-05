@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FishEye - Accueil - Trouvez le photographe freelance qui vous correspond</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/homepage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
-    <script type="module" src="./js/main.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FishEye - Accueil - Trouvez le photographe freelance qui vous correspond</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/homepage.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+        <script type="module" src="./js/main.js"></script>
+    </head>
 
-<body>
-    <!-- LOADER -->
-    <div class="loader">
-        <div class="loader-box">
-            <div class="loader-object"></div>
-            <div class="loader-object"></div>
-            <div class="loader-object"></div>
+    <body>
+        <!-- LOADER -->
+        <div class="loader">
+            <div class="loader-box">
+                <div class="loader-object"></div>
+                <div class="loader-object"></div>
+                <div class="loader-object"></div>
+            </div>
         </div>
-    </div>
-    <!-- MAIN HEADER -->
-    <header>
-        <a href="index.html" title="Homepage">
-            <img src="./media/logo.png" alt="FishEye Home Page">
-        </a>
+        <!-- MAIN HEADER -->
+        <header>
+            <a href="index.html" title="Homepage">
+                <img src="./media/logo.png" alt="FishEye Home Page">
+            </a>
     
-    <!-- NAV FILTERS -->
-    <nav class="filters" aria-label="photographer specialities">
-        <ul class="filters_navlist">
-            <li data-filter="portrait" tabindex="0">#portrait</li>
-            <li data-filter="art" tabindex="0">#art</li>
-            <li data-filter="fashion" tabindex="0">#fashion</li>
-            <li data-filter="architecture" tabindex="0">#architecture</li>
-            <li data-filter="travel" tabindex="0">#travel</li>
-            <li data-filter="sport" tabindex="0">#sport</li>
-            <li data-filter="animals" tabindex="0">#animals</li>
-            <li data-filter="events" tabindex="0">#events</li>
-        </ul>
-    </nav>
-    <h1>Nos Photographes</h1>
-    </header>
+        <!-- NAV FILTERS -->
+        <nav class="filters" aria-label="photographer specialities">
+            <ul class="filters_navlist">
+                <li data-filter="portrait" tabindex="0">#portrait</li>
+                <li data-filter="art" tabindex="0">#art</li>
+                <li data-filter="fashion" tabindex="0">#fashion</li>
+                <li data-filter="architecture" tabindex="0">#architecture</li>
+                <li data-filter="travel" tabindex="0">#travel</li>
+                <li data-filter="sport" tabindex="0">#sport</li>
+                <li data-filter="animals" tabindex="0">#animals</li>
+                <li data-filter="events" tabindex="0">#events</li>
+            </ul>
+        </nav>
+        <h1>Nos Photographes</h1>
+        </header>
 
-    <main>
-        <!-- 'Passer au contenu' validation filter button -->
-        <a href="#photographers" id="main-photographer-button">Passer au contenu</a>
-        <!-- Photographers' section -->
-        <section id="photographers_part" class="photographers_part" aria-label="photographers"></section>
-    </main>
-
-</body>
-
+        <main>
+            <!-- 'Passer au contenu' validation filter button -->
+            <a href="#photographers_part" id="main-photographer-button">Passer au contenu</a>
+            <!-- Photographers' section -->
+            <section id="photographers_part" class="photographers_part" aria-label="photographers"></section>
+        </main>
+    </body>
 </html>

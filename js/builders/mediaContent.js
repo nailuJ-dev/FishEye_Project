@@ -41,7 +41,7 @@ export class VideoContent {
                 <figcaption class="photographer-page_gallery_media_footer_figcaption">${this._titleVideo}</figcaption>
                 <aside class="photographer-page_gallery_media_footer_like-section">
                     <p class="photographer-page_gallery_media_footer_like-section-counter">${this._likesVideo}</p>
-                    <button class="photographer-page_gallery_media_footer_like-section-button focus_element-secondary"><i class="far fa-heart" aria-hidden="true"></i></button>
+                    <button class="photographer-page_gallery_media_footer_like-section-button focus_element-secondary" title="I like it" aria-label="Add a like"><i class="far fa-heart" aria-hidden="true"></i></button>
                 </aside>
             </footer>
         </figure>
