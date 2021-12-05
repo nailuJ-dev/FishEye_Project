@@ -82,6 +82,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 46px;
+    width: -webkit-fill-available;
 }
 
 .photographer-page_gallery_card {
@@ -94,6 +95,14 @@
     height: 190px;
     object-fit: cover;
     width: 100%;
+}
+
+.photographer-page_gallery_media:hover{
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
 }
   
 .photographer-page_gallery_media:focus {
