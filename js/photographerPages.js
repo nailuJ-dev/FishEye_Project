@@ -35,7 +35,6 @@ function updateContentMedia (contentGallery) {
     });
 }
 
-
 // Show photographer datas with photographer ID
 
 async function showPhotographerDatas() {
