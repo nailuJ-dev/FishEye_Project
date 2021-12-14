@@ -82,7 +82,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 46px;
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 .photographer-page_gallery_card {
