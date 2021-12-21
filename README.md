@@ -23,4 +23,4 @@ Sixth project of the Openclassroom web developer course. The main goal is to cre
   - Compatibility with W3C Validator is checked
   - Compatibility with Achecker is checked
   - Compatibility with Google Chrome and Firefox is required
-  - The code has been versioned on GIT and deployed on GITHUB at the following address https://nailuj-dev.github.io/JulianBuzare_6_15102021/
+  - The code has been versioned on GIT and deployed on GITHUB at the following address https://nailuj-dev.github.io/FishEye_project/
